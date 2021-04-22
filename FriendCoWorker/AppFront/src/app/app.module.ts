@@ -4,11 +4,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IndexComponent } from './components/index/index.component';
+import { EmpleadoComponent } from './components/empleado/empleado.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IndexComponent,
+    EmpleadoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
