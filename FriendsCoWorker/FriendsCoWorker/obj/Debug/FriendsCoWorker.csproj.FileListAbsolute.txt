@@ -92,3 +92,11 @@ D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWor
 D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\obj\Debug\FriendsCoWorker.csproj.CopyComplete
 D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\obj\Debug\FriendsCoWorker.dll
 D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\obj\Debug\FriendsCoWorker.pdb
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\Microsoft.IdentityModel.Logging.dll
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\Microsoft.IdentityModel.Tokens.dll
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\Microsoft.IdentityModel.Logging.xml
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\Microsoft.IdentityModel.Tokens.xml
+D:\Alan\Documentos\Facultad\Tesis\Friend&Co-Worker\Friend-Co-Worker\FriendsCoWorker\FriendsCoWorker\bin\System.IdentityModel.Tokens.Jwt.xml
