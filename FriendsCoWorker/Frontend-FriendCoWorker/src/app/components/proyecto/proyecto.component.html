@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+<body>
+
+  <h1 id="pageHeaderTitle" class="h1 text-center"
+    style="text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;">
+    Proyectos</h1>
+  <main class="container">
+    <div *ngFor="let proyecto of listProyectos">
+      <div class="h1 text-center" id="pageHeaderTitle">
+      </div>
+
+      <article class="postcard blue">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" [src]="proyecto.Imagen_mockup" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+          <h1 class="postcard__title blue"><a href="#">{{ proyecto.Nombre }}</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2 mb-2"></i> Fecha de creación: {{ proyecto.FechaCreacion }}    //
+            </time>
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2 mt-2"></i>Fecha de fin: {{ proyecto.FechaFin }}
+            </time>
+          </div>
+
+          <div class="postcard__bar"></div>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2 mt-2"></i> Fecha real de creación: {{ proyecto.Fecha_real_creacion }}    //
+            </time>
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2 mt-2"></i> Fecha real de creación: {{ proyecto.Fecha_real_creacion }}
+            </time>
+          </div>
+
+
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt small">{{ proyecto.Descripcion }}</div>
+          <div class="postcard__preview-txt small">Empresa: {{ proyecto.Empresa }}</div>
+
+          <ul class="postcard__tagbox mt-1">
+            <button class="tag__item"><i class="fas fa-tag mr-2"></i>VOTAR</button>
+            <button class="tag__item" (click)="sumarProyecto(proyecto.Id_proyecto)"><i class="fas fa-clock mr-2" ></i>SUMARSE</button>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+</body>

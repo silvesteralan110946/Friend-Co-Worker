@@ -1,0 +1,188 @@
+<!-- CREAR PROYECTO -->
+<!-- NAVBAR -->
+<app-navbar></app-navbar>
+
+<body>
+
+  <div class="wrapper fadeInDown">
+    <div class="cardTamaño">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo">Bienvenido</span>
+          <br>
+          <span class="titulo">Complete los campos para crear su proyecto</span>
+          <form class="mt-3" [formGroup]="formProyecto" (ngSubmit)="agregarProyecto(selectedProyecto)">
+
+
+
+            <div class="row">
+              <!-- Primer fila -->
+
+              <div class="col-10 offset-1 borde">
+                <div class="form-group">
+                  <label class="form-control" for="nombre">Nombre del Proyecto</label>
+                  <input type="text" id="nombre" class="form-control fadeIn" formControlName="nombre"
+                    [(ngModel)]="selectedProyecto.Nombre"
+                    [ngClass]="{ 'is-invalid': (formProyecto.get('nombre')?.touched || formProyecto.get('nombre')?.dirty) && !formProyecto.get('nombre')?.valid}">
+                  <div class="invalid-feedback">
+                    <span *ngIf="formProyecto.get('nombre').errors?.required">
+                      Introduzca un Nombre
+                    </span>
+                    <span *ngIf="formProyecto.get('nombre').errors?.pattern">
+                      Debe contener al menos 2 caracteres
+                    </span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6 borde">
+                    <div class="form-group">
+                      <label class="form-control" for="fechaCreacion">Fecha de Creación</label>
+                      <input type="date" class="form-control fadeIn" title="Fecha de Creación"
+                        [(ngModel)]="selectedProyecto.FechaCreacion" formControlName="fechaCreacion"
+                        [ngClass]="{ 'is-invalid': formProyecto.get('fechaCreacion')?.touched && !formProyecto.get('fechaCreacion')?.valid}">
+                      <div class="invalid-feedback">
+                        <span *ngIf="formProyecto.get('fechaCreacion').errors?.required">
+                          Introduzca una Fecha de Creación
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-6 borde">
+                    <div class="form-group">
+                      <label class="form-control" for="fechaFin">Fecha de Fin</label>
+                      <input type="date" class="form-control fadeIn" title="Fecha de Fin"
+                        [(ngModel)]="selectedProyecto.FechaFin" formControlName="fechaFin"
+                        [ngClass]="{ 'is-invalid': formProyecto.get('fechaFin')?.touched && !formProyecto.get('fechaFin')?.valid}">
+                      <div class="invalid-feedback">
+                        <span *ngIf="formProyecto.get('fechaFin').errors?.required">
+                          Introduzca una Fecha de Fín
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-6 borde">
+                    <div class="form-group">
+                      <label class="form-control" for="FechaRealCreacion">Fecha Real de Creación</label>
+                      <input type="date" class="form-control fadeIn" title="Fecha real de Creación"
+                        [(ngModel)]="selectedProyecto.Fecha_Real_Creacion" formControlName="FechaRealCreacion"
+                        [ngClass]="{ 'is-invalid': formProyecto.get('FechaRealCreacion')?.touched && !formProyecto.get('FechaRealCreacion')?.valid}">
+                      <div class="invalid-feedback">
+                        <span *ngIf="formProyecto.get('FechaRealCreacion').errors?.required">
+                          Introduzca una Fecha de Creación
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 borde">
+                    <div class="form-group">
+                      <label class="form-control" for="FechaRealFin">Fecha Real de Fin</label>
+                      <input type="date" class="form-control fadeIn" title="Fecha real de Fin"
+                        [(ngModel)]="selectedProyecto.Fecha_Real_Fin" formControlName="FechaRealFin"
+                        [ngClass]="{ 'is-invalid': formProyecto.get('FechaRealFin')?.touched && !formProyecto.get('FechaRealFin')?.valid}">
+                      <div class="invalid-feedback">
+                        <span *ngIf="formProyecto.get('FechaRealFin').errors?.required">
+                          Introduzca una Fecha de Fín
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-control text-center" for="horas_trabajadas">Cantidad de Horas</label>
+                  <input type="number" id="horas_trabajadas" class="form-control fadeIn text-center"
+                    formControlName="horas_trabajadas" [(ngModel)]="selectedProyecto.Horas_Trabajadas"
+                    [ngClass]="{ 'is-invalid': (formProyecto.get('horas_trabajadas')?.touched || formProyecto.get('horas_trabajadas')?.dirty) && !formProyecto.get('horas_trabajadas')?.valid}">
+                  <div class="invalid-feedback">
+                    <span *ngIf="formProyecto.get('horas_trabajadas').errors?.required">
+                      Introduzca las horas
+                    </span>
+                    <span *ngIf="formProyecto.get('horas_trabajadas').errors?.pattern">
+                      Debe contener al menos 1 caracter Numérico, sín espacios en blanco
+                    </span>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="form-control" for="empresa">Nombre de la Empresa</label>
+                  <input type="text" id="nombre" class="form-control fadeIn" formControlName="Empresa"
+                    [(ngModel)]="selectedProyecto.Empresa"
+                    [ngClass]="{ 'is-invalid': (formProyecto.get('Empresa')?.touched || formProyecto.get('Empresa')?.dirty) && !formProyecto.get('Empresa')?.valid}">
+                  <div class="invalid-feedback">
+                    <span *ngIf="formProyecto.get('Empresa').errors?.required">
+                      Introduzca el nombre de la Empresa
+                    </span>
+                    <span *ngIf="formProyecto.get('Empresa').errors?.pattern">
+                      Debe contener al menos 2 caracteres
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-control" for="Descripcion">Descripcion del Proyecto</label>
+                  <input type="text" id="Descripcion" class="form-control fadeIn" formControlName="Descripcion"
+                    [(ngModel)]="selectedProyecto.Descripcion"
+                    [ngClass]="{ 'is-invalid': (formProyecto.get('Descripcion')?.touched || formProyecto.get('Descripcion')?.dirty) && !formProyecto.get('Descripcion')?.valid}">
+                  <div class="invalid-feedback">
+                    <span *ngIf="formProyecto.get('Descripcion').errors?.required">
+                      Introduzca una breve Descripción
+                    </span>
+                    <span *ngIf="formProyecto.get('Descripcion').errors?.pattern">
+                      Debe contener al menos 2 caracteres
+                    </span>
+                  </div>
+                </div>
+
+
+                <div class="col-8 general-fotos">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <div class=" col-12 col-sm-12 col-md-12 dni-mensaje">
+                        <p>Ingrese una foto de MockUp</p>
+                      </div>
+                      <div class=" col-12 col-sm-12 col-md-12 selfie">
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <p>MockUp</p>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="selfie-foto">
+                              <img [src]="imagen" alt="">
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="contenedor-btnDorso">
+                              <input class="file" id="fileselfie" (click)="onSelectedFile()"
+                                formControlName="img_mockup">
+                              <label for="fileselfie" class="labelFoto">Subir Archivo</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!-- TERMINA FILA -->
+
+
+              <div class="mb-3 col-md-12">
+                <button routerLink="/inicio" class="btn btn-secondary" style="float: left;">Volver</button>
+                <button class="btn btn-success" style="float: right;" [disabled]="formProyecto.invalid">Crear</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,483 @@
+#banner {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(
+      to top,
+      rgba(46, 49, 65, 0),
+      rgba(46, 49, 65, 1)
+    ),
+    url(../../../assets/images/fondo-header.png);
+  background-size: auto, cover;
+  background-attachment: fixed;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  padding: 10em 0 4.75em 0;
+  height: 80vh;
+  color: #ffffff;
+}
+
+.color-white {
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Istok Web", sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 31px;
+}
+
+.btn-banner {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color: #1493cc;
+  border: 1px solid #1493cc;
+  color: white;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 50px;
+  padding: 18px 43px;
+}
+
+
+
+#banner p {
+  font-family: "Istok Web", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#banner h2 {
+  font-size: 50px;
+  margin-bottom: 37px;
+}
+
+#banner p {
+  font-size: 20px;
+  margin-bottom: 29px;
+}
+
+.btn-banner:hover {
+  background-color: #17658b;
+  border: 1px solid #17658b;
+}
+
+@media (max-width: 500px) {
+  #banner h2 {
+    font-size: 32px;
+    margin-bottom: 37px;
+  }
+  #banner p {
+    font-size: 15px;
+    margin-bottom: 29px;
+  }
+  .btn-banner {
+    padding: 12px 35px;
+  }
+
+  #banner {
+    padding: 6em 0 4.75em 0;
+  }
+}
+
+#one h2,
+#one p {
+  text-align: right;
+}
+
+#one a,
+#three a {
+  float: right;
+}
+
+.one-features,
+.two-features,
+.three-features {
+  padding: 50px 0;
+}
+
+#two {
+  background-color: #242d44;
+  color: #ffffff;
+}
+
+#one .btn-learn-more {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: black;
+  font-size: 13px;
+  padding-right: 0px;
+}
+
+#one .btn-learn-more i.fa-chevron-right:hover {
+  background-color: #242d44;
+  color: #ffffff;
+}
+
+#one {
+  background-color: #ffffff;
+}
+
+#one {
+  color: #333333;
+}
+
+.one-features,
+.two-features,
+.three-features {
+  padding: 50px 0;
+}
+
+.section-highlight {
+  padding-top: 40px;
+}
+
+.section-details {
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+.section-details p {
+  padding-bottom: 60px;
+}
+
+.iconLi:hover{
+  color: red !important;
+}
+
+.btn-learn-more {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+#two .btn-learn-more {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  color: #ffffff;
+  padding-left: 0px;
+}
+
+#one .btn-learn-more i.fa-chevron-right:hover {
+  background-color: #242d44;
+  color: #ffffff;
+}
+
+#two .btn-learn-more i.fa-chevron-right:hover {
+  background-color: #ffffff;
+  color: #242d44;
+}
+
+i.fa-chevron-right {
+  -moz-transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  border-radius: 50%;
+  border: solid 1px #9f9f9f;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  margin-left: 5px;
+  text-align: center;
+  vertical-align: middle;
+  width: 35px;
+}
+
+.section-heading .title h2 {
+  margin-bottom: 35px;
+}
+
+.liIcon {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.title h2 {
+  margin-bottom: 35px;
+}
+
+img,
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 15px auto;
+}
+
+.footer-features {
+  padding: 30px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.form-footer {
+  border-radius: 15px;
+}
+
+.footer-top {
+  padding: 50px;
+  text-align: center;
+}
+
+.liicon {
+  display: flex;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.footer-bottom p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  color: #333333;
+}
+
+.footer-bottom {
+  margin: 56px 0 56px 0;
+}
+
+#footer {
+  background-color: #ffffff;
+}
+
+.footer-top h2,
+.footer-top p,
+.footer-top li {
+  color: #333333;
+}
+
+.footer-list,
+.list-solid-state i {
+  color: #333;
+  font-size: 21px;
+}
+
+.footer-list i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.list-table p {
+  width: 500px;
+}
+
+.list-table {
+  display: table;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dfdfdf;
+}
+.list-table i {
+  display: table-cell;
+  padding-right: 10px;
+}
+
+.list-solid-state {
+  margin-left: 15px;
+}
+
+.list-solid-state .list-inline {
+  margin-left: 13px;
+}
+
+.fa-facebook-f:hover,
+.fa-facebook-f:focus {
+  color: #44619d;
+}
+
+.fa-twitter:hover,
+.fa-twitter:focus {
+  color: #33ccff;
+}
+
+.fa-linkedin-in:hover,
+.fa-linkedin-in:focus {
+  color: #1b86bd;
+}
+
+@media (max-width: 1100px) {
+  .list-table p {
+    width: 450px;
+  }
+}
+
+@media (max-width: 570px) {
+  .list-table p {
+    width: 355px;
+  }
+}
+
+@media (max-width: 425px) {
+  .list-table p {
+    width: 250px;
+  }
+}
+
+@media (max-width: 320px) {
+  .list-table p {
+    width: 170px;
+  }
+}
+
+@media (max-width: 248px) {
+  .list-table p {
+    width: 120px;
+  }
+}
+
+.btn-solid-state {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color: #242d44;
+  color: #ffffff;
+  border-radius: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.btn-solid-state:focus,
+.btn-solid-state:hover {
+  border: 1px solid #242d44;
+  color: #242d44;
+  border-radius: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+@media (max-width: 991px) {
+  #one h2,
+  #three h2,
+  #one p,
+  #three p,
+  #two h2,
+  #two p {
+    text-align: center;
+  }
+  #one a,
+  #two a,
+  #three a {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+  .section-highlight {
+    padding-top: 20px;
+  }
+
+  .section-details {
+    padding-top: 35px;
+    padding-bottom: 30px;
+  }
+
+  .section-details p {
+    padding-bottom: 30px;
+  }
+
+  #two .btn-learn-more {
+    padding-left: 15px;
+  }
+
+  .footer-list i {
+    font-size: 16px;
+  }
+
+  .footer-top {
+    padding: 0;
+    padding-top: 50px;
+  }
+  .footer-list {
+    margin-top: 40px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 25px;
+  }
+
+  .btn-solid-state {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    background-color: #242d44;
+    color: #ffffff;
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .btn-solid-state:focus,
+  .btn-solid-state:hover {
+    border: 1px solid #242d44;
+    color: #242d44;
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 248px) {
+  p {
+    font-size: 12px;
+  }
+
+  .footer-list i {
+    font-size: 12px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 17px;
+  }
+}
