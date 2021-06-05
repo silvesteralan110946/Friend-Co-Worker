@@ -1,19 +1,18 @@
 export class Empleado
 {
-    Id: number;
-    Nombre: string;
-    Apellido: string;
-	  Sexo: string;
-    IdTipoDocumento: number;
-    NumeroDocumento: string;
-    FotoPerfil: string;
-    FechaNacimiento: string;
-    IdLocalidad: number;
-    Domicilio: string;
-    Telefono: string;
-    Email: string;
-    IdTipoEmpleado: number;
-    NombreUsuario: string;
-    Password: string;
-
+    id: number;
+    nombre: string;
+    apellido: string;
+	  sexo: string;
+    idTipoDocumento: number;
+    numeroDocumento: string;
+    fotoPerfil: string;
+    fechaNacimiento: string;
+    idLocalidad: number;
+    domicilio: string;
+    telefono: number;
+    email: string;
+    idTipoEmpleado: number;
+    nombreUsuario: string;
+    password: string;
 }

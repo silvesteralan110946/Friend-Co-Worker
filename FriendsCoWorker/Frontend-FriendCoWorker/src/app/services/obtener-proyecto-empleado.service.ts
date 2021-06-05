@@ -19,6 +19,7 @@ export class ObtenerProyectoEmpleadoService {
   list: ProyectosEmpleado[];
   idEmpleado: number;
 
+
   constructor(private http: HttpClient, private tokenService: TokenStorageService) { }
 
   // Traer empleados
@@ -30,5 +31,9 @@ export class ObtenerProyectoEmpleadoService {
   getProyectosEmpleado(): Observable<ProyectosEmpleado[]> {
     this.idEmpleado = this.tokenService.getIdEmpleado();
     return this.http.get<ProyectosEmpleado[]>(url + this.idEmpleado, httpOptions);
+  }
+
+  deleteProyecto(legajo: number, id_proyecto: number): Observable<any>{
+    return this.http.post<ProyectosEmpleado[]>(url + legajo + "/"+ id_proyecto + "/", httpOptions);
   }
 }

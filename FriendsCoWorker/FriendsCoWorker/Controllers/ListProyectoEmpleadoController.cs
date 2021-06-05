@@ -26,7 +26,7 @@ namespace FriendsCoWorker.Controllers
         // GET: api/ListProyectoEmpleado/5
         [HttpGet]
         [Route("api/proyecto-x-empleado/{legajo}")]
-        public ListProyectoEmpleado Get(int legajo)
+        public IEnumerable<ListProyectoEmpleado> Get(int legajo)
         {
             GestorListEmpleadoProyecto gLista = new GestorListEmpleadoProyecto();
             return gLista.ObtenerPorId(legajo);
@@ -42,9 +42,13 @@ namespace FriendsCoWorker.Controllers
         {
         }
 
+        [HttpPost]
+        [Route("api/proyecto-x-empleado/{legajo}/{id_proyecto}")]
         // DELETE: api/ListProyectoEmpleado/5
-        public void Delete(int id)
+        public void Delete(int legajo, int id_proyecto)
         {
+            GestorListEmpleadoProyecto gProyecto = new GestorListEmpleadoProyecto();
+            gProyecto.salirDeProyecto(legajo, id_proyecto);
         }
     }
 }

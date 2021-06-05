@@ -24,7 +24,7 @@
                         </div>
                         <div class ="col-12 col-sm-12 col-md-12 col-lg-12">
                           <div class ="contenedor-btnDorso">
-                              <input class="file" id="fileselfie" (click)="onSelectedFile()" formControlName="fotoPerfil">
+                              <input class="file" id="fileselfie" [(ngModel)]="selectedEmpleado.fotoPerfil" (click)="onSelectedFile()" formControlName="fotoPerfil">
                               <label for="fileselfie" class="labelFoto">Subir Archivo</label>
                           </div>
                       </div>
@@ -41,7 +41,7 @@
                 <div class="form-group">
                   <label class="form-control" for="nombre">Nombre</label>
                   <input type="text" id="nombre" class="form-control fadeIn" formControlName="nombre"
-                    [(ngModel)]="selectedEmpleado.Nombre"
+                    [(ngModel)]="selectedEmpleado.nombre"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('nombre')?.touched || formEmpleado.get('nombre')?.dirty) && !formEmpleado.get('nombre')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('nombre').errors?.required">
@@ -58,7 +58,7 @@
                 <div class="form-group">
                   <label class="form-control text-center" for="apellido">Apellido</label>
                   <input type="text" id="apellido" class="form-control fadeIn" formControlName="apellido"
-                    [(ngModel)]="selectedEmpleado.Apellido"
+                    [(ngModel)]="selectedEmpleado.apellido"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('apellido')?.touched || formEmpleado.get('apellido')?.dirty) && !formEmpleado.get('apellido')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('apellido').errors?.required">
@@ -73,7 +73,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="sexo">Sexo</label>
-                  <select class="form-control fadeIn" [(ngModel)]="selectedEmpleado.Sexo" formControlName="sexo"
+                  <select class="form-control fadeIn" [(ngModel)]="selectedEmpleado.sexo" formControlName="sexo"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('sexo')?.touched || formEmpleado.get('sexo')?.dirty) && !formEmpleado.get('sexo')?.valid}">
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
@@ -88,7 +88,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="idTipoDocumento">Tipo de Documento</label>
-                  <select class="form-control fadeIn" [(ngModel)]="selectedEmpleado.IdTipoDocumento"
+                  <select class="form-control fadeIn" [(ngModel)]="selectedEmpleado.idTipoDocumento"
                     formControlName="idTipoDocumento"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('idTipoDocumento')?.touched || formEmpleado.get('idTipoDocumento')?.dirty) && !formEmpleado.get('idTipoDocumento')?.valid}">
                     <option *ngFor="let tipodni of tipoDni" value={{tipodni.Id}}>{{tipodni.Nombre_dni}}</option>
@@ -104,7 +104,7 @@
                 <div class="form-group">
                   <label class="form-control text-center" for="numDni">Número de Documento</label>
                   <input type="text" id="numDni" class="form-control fadeIn" formControlName="numDni"
-                    [(ngModel)]="selectedEmpleado.NumeroDocumento"
+                    [(ngModel)]="selectedEmpleado.numeroDocumento"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('numDni')?.touched || formEmpleado.get('numDni')?.dirty) && !formEmpleado.get('numDni')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('numDni').errors?.required">
@@ -119,7 +119,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="telefono">Teléfono</label>
-                  <input type="text" [(ngModel)]="selectedEmpleado.Telefono" class="form-control fadeIn"
+                  <input type="text" [(ngModel)]="selectedEmpleado.telefono" class="form-control fadeIn"
                     formControlName="telefono"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('telefono')?.touched || formEmpleado.get('telefono')?.dirty) && !formEmpleado.get('telefono')?.valid}">
                   <div class="invalid-feedback">
@@ -135,7 +135,7 @@
                 <div class="form-group">
                   <label class="form-control" for="fechaNacimiento">Fecha de Nacimiento</label>
                   <input type="date" class="form-control fadeIn" title="Fecha de Nacimiento"
-                    [(ngModel)]="selectedEmpleado.FechaNacimiento" formControlName="fechaNacimiento"
+                    [(ngModel)]="selectedEmpleado.fechaNacimiento" formControlName="fechaNacimiento"
                     [ngClass]="{ 'is-invalid': formEmpleado.get('fechaNacimiento')?.touched && !formEmpleado.get('fechaNacimiento')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('fechaNacimiento').errors?.required">
@@ -146,7 +146,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="email">Email</label>
-                  <input type="email" [(ngModel)]="selectedEmpleado.Email" class="form-control fadeIn"
+                  <input type="email" [(ngModel)]="selectedEmpleado.email" class="form-control fadeIn"
                     formControlName="email"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('email')?.touched || formEmpleado.get('email')?.dirty) && !formEmpleado.get('email')?.valid}">
                   <div class="invalid-feedback">
@@ -198,7 +198,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="localidad">Localidad</label>
-                  <select class="form-control" [(ngModel)]="selectedEmpleado.IdLocalidad" formControlName="localidad"
+                  <select class="form-control" [(ngModel)]="selectedEmpleado.idLocalidad" formControlName="localidad"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('localidad')?.touched || formEmpleado.get('localidad')?.dirty) && !formEmpleado.get('localidad')?.valid}">
                     <option *ngFor="let localidades of localidadesAux" value={{localidades.id}}>{{localidades.nombre}}
                     </option>
@@ -213,7 +213,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="domicilio">Domicilio</label>
-                  <input type="text" [(ngModel)]="selectedEmpleado.Domicilio" class="form-control fadeIn"
+                  <input type="text" [(ngModel)]="selectedEmpleado.domicilio" class="form-control fadeIn"
                     formControlName="domicilio"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('domicilio')?.touched || formEmpleado.get('domicilio')?.dirty) && !formEmpleado.get('domicilio')?.valid}">
 
@@ -230,7 +230,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="idTipoEmpleado">Tipo de Empleado</label>
-                  <select class="form-control" [(ngModel)]="selectedEmpleado.IdTipoEmpleado"
+                  <select class="form-control" [(ngModel)]="selectedEmpleado.idTipoEmpleado"
                     formControlName="idTipoEmpleado"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('idTipoEmpleado')?.touched || formEmpleado.get('idTipoEmpleado')?.dirty) && !formEmpleado.get('idTipoEmpleado')?.valid}">
                     <option *ngFor="let tipoempleado of tipoEmpleado" value={{tipoempleado.Id}}>
@@ -246,7 +246,7 @@
 
                 <div class="form-group">
                   <label class="form-control" for="usuario">Nombre de Usuario</label>
-                  <input type="text" [(ngModel)]="selectedEmpleado.NombreUsuario" class="form-control fadeIn"
+                  <input type="text" [(ngModel)]="selectedEmpleado.nombreUsuario" class="form-control fadeIn"
                     formControlName="usuario"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('usuario')?.touched || formEmpleado.get('usuario')?.dirty) && !formEmpleado.get('usuario')?.valid}">
                   <div class="invalid-feedback">
@@ -263,7 +263,7 @@
                 <div class="form-group">
                   <label class="form-control" for="password">Password</label>
                   <input type="password" class="form-control fadeIn" formControlName="password"
-                    [(ngModel)]="selectedEmpleado.Password"
+                    [(ngModel)]="selectedEmpleado.password"
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('password')?.touched || formEmpleado.get('password')?.dirty) && !formEmpleado.get('password')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('password').errors?.required">

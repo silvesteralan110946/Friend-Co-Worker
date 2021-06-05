@@ -81,42 +81,7 @@ namespace FriendsCoWorker.AccesoDatos
             }
         }
 
-        public int altaEmpleado(Empleado emp)
-        {
-            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
-            int mensaje = 0;
 
-
-            using (SqlConnection conn = new SqlConnection(StrConn))
-            {
-                conn.Open();
-
-                SqlCommand comm = conn.CreateCommand();
-
-
-                comm.CommandText = "altaEmpleado";
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-
-                comm.Parameters.Add(new SqlParameter("@nombre", emp.Nombre));
-                //comm.Parameters.Add(new SqlParameter("@apellido", nuevo.Apellido));
-                //comm.Parameters.Add(new SqlParameter("@sexo", nuevo.Sexo));
-                //comm.Parameters.Add(new SqlParameter("@idTipoDocumento", nuevo.IdTipoDocumento));
-                //comm.Parameters.Add(new SqlParameter("@num_dni", nuevo.NumeroDocumento));
-                //comm.Parameters.Add(new SqlParameter("@fotoPerfil", nuevo.FotoPerfil));
-                //comm.Parameters.Add(new SqlParameter("@fecha_nacimiento", nuevo.FechaNacimiento));
-                //comm.Parameters.Add(new SqlParameter("@id_localidad", nuevo.IdLocalidad));
-                //comm.Parameters.Add(new SqlParameter("@domicilio", nuevo.Domicilio));
-                //comm.Parameters.Add(new SqlParameter("@telefono", nuevo.Telefono));
-                //comm.Parameters.Add(new SqlParameter("@email", nuevo.Email));
-                //comm.Parameters.Add(new SqlParameter("@idTipoEmpleado", nuevo.IdTipoEmpleado));
-                //comm.Parameters.Add(new SqlParameter("@nombre_usuario", nuevo.NombreUsuario));
-                //comm.Parameters.Add(new SqlParameter("@password", encriptarContraseña));
-
-                comm.ExecuteNonQuery();
-
-                return mensaje;
-            }
-        }
 
         // OBTENER EMPLEADOS
         public List<Empleado> ObtenerEmpleados()
@@ -191,7 +156,7 @@ namespace FriendsCoWorker.AccesoDatos
                     string password = dr.GetString(14);
 
                     //Empleado emp = new Empleado(legajo2, nombre, apellido, sexo, idTipoDni, numDni, fotoPerfil, fechaNacimiento, idLocalidad, domicilio, telefono, email, IdTipoEmpleado, nombreUsuario, password);
-                    lista = new Empleado(legajo2, nombre, apellido, sexo, idTipoDni, numDni, fotoPerfil, fechaNacimiento, idLocalidad, domicilio, telefono, email, IdTipoEmpleado, nombreUsuario, password); 
+                    lista = new Empleado(legajo2, nombre, apellido, sexo, idTipoDni, numDni, fotoPerfil, fechaNacimiento, idLocalidad, domicilio, telefono, email, IdTipoEmpleado, nombreUsuario, password);
                     //lista.Add(emp);
                 }
                 dr.Close();
