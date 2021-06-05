@@ -30,8 +30,10 @@ namespace FriendsCoWorker.AccesoDatos
                     string empresa = dr.GetString(2);
                     string descripcion = dr.GetString(3);
                     string img_mockup = dr.GetString(4);
+                    int id_proyecto = dr.GetInt32(5);
 
-                    ListProyectoEmpleado pro = new ListProyectoEmpleado(legajo, nombre, empresa, descripcion, img_mockup);
+
+                    ListProyectoEmpleado pro = new ListProyectoEmpleado(legajo, nombre, empresa, descripcion, img_mockup, id_proyecto);
                     lista.Add(pro);
                 }
                 dr.Close();
@@ -40,9 +42,9 @@ namespace FriendsCoWorker.AccesoDatos
         }
 
         // Obtener proyecto por legajo
-        public ListProyectoEmpleado ObtenerPorId(int legajo)
+        public List<ListProyectoEmpleado> ObtenerPorId(int legajo)
         {
-            ListProyectoEmpleado lista = null;
+            List<ListProyectoEmpleado> lista = new List<ListProyectoEmpleado>();
             string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
 
             using (SqlConnection conn = new SqlConnection(StrConn))
@@ -54,19 +56,39 @@ namespace FriendsCoWorker.AccesoDatos
                 comm.Parameters.Add(new SqlParameter("@legajo", legajo));
 
                 SqlDataReader dr = comm.ExecuteReader();
-                if (dr.Read())
+                while (dr.Read())
                 {
                     int legajos = dr.GetInt32(0);
                     string nombre_proyecto = dr.GetString(1);
                     string empresa = dr.GetString(2);
                     string descripcion = dr.GetString(3);
                     string img_mockup = dr.GetString(4);
+                    int id_proyecto = dr.GetInt32(5);
 
-                    lista = new ListProyectoEmpleado(legajos, nombre_proyecto, empresa, descripcion, img_mockup);
+                    ListProyectoEmpleado pro = new ListProyectoEmpleado(legajos, nombre_proyecto, empresa, descripcion, img_mockup, id_proyecto);
+                    lista.Add(pro);
                 }
                 dr.Close();
             }
             return lista;
+        }
+
+        // Eliminar proyecto adherido
+        public void salirDeProyecto(int legajo, int id_proyecto)
+        {
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+
+                SqlCommand comm = new SqlCommand("salirDeProyecto", conn);
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@legajo", legajo));
+                comm.Parameters.Add(new SqlParameter("@id_proyecto", id_proyecto));
+
+                comm.ExecuteNonQuery();
+            }
         }
     }
 }

@@ -59,3 +59,37 @@ var {
   max-height: 75px;
   object-fit: cover;
 }
+
+.btn{
+  display: flex;
+  justify-content: center;
+}
+
+.parrafo{
+  font-size: 30px;
+}
+
+.card-novisible{
+  border-radius: 30px;
+}
+
+.botonSumar{
+  margin: 0 auto;
+}
+
+.botonSumar:hover{
+  background-color: #17658b;
+  color: white;
+}
+
+.imagen{
+  width: 500px;
+  height: 500px;
+}
+
+@media (min-width: 300px) and (max-width: 500px){
+  .imagen{
+    width: 300px;
+    height: 300px;
+  }
+}

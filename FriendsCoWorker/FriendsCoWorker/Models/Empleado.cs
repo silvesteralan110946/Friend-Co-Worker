@@ -7,7 +7,8 @@ namespace FriendsCoWorker.Models
 {
     public class Empleado
     {
-        private int legajo;
+        
+        private int legajo = 30;
         private string nombre;
         private string apellido;
         private string sexo;
@@ -24,12 +25,32 @@ namespace FriendsCoWorker.Models
         private string password;
         private string tokenRecovery;
 
-        public Empleado(int legajo, string nombre)
+        //    public Empleado(int legajo, string nombre)
+        //    {
+        //        this.legajo = legajo;
+        //        this.nombre = nombre;
+        //    }
+
+        public Empleado(int legajo, string nombre, string apellido, string sexo, int idTipoDocumento, string numeroDocumento, string fotoPerfil, string fechaNacimiento,
+            int idLocalidad, string domicilio, int telefono, string email, int idTipoEmpleado, string nombreUsuario, string password, string tokenRecovery)
         {
             this.legajo = legajo;
             this.nombre = nombre;
+            this.apellido = apellido;
+            this.sexo = sexo;
+            this.idTipoDocumento = idTipoDocumento;
+            this.numeroDocumento = numeroDocumento;
+            this.fotoPerfil = fotoPerfil;
+            this.fechaNacimiento = fechaNacimiento;
+            this.idLocalidad = idLocalidad;
+            this.domicilio = domicilio;
+            this.telefono = telefono;
+            this.email = email;
+            this.idTipoEmpleado = idTipoEmpleado;
+            this.nombreUsuario = nombreUsuario;
+            this.password = password;
+            this.tokenRecovery = tokenRecovery;
         }
-
         public Empleado(int legajo, string nombre, string apellido, string sexo, int idTipoDocumento, string numeroDocumento, string fotoPerfil, string fechaNacimiento,
             int idLocalidad, string domicilio, int telefono, string email, int idTipoEmpleado, string nombreUsuario, string password)
         {

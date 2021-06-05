@@ -53,6 +53,7 @@ export class EmpleadoComponent implements OnInit {
     passwordRepeat: ['', [Validators.required, Validators.pattern(this.patternPassword), Validators.minLength(8)]]
   })
 
+
   public empleado: Empleado[];
   selectedEmpleado: Empleado = new Empleado();
   public tipoDni: TipoDni[];
@@ -82,6 +83,7 @@ export class EmpleadoComponent implements OnInit {
     // if (this.tokenStorage.getToken) {
     //   this.router.navigate(['/home']);
     // }
+    console.log(this.formEmpleado);
 
     //obtenemos lista tipos de dni
     this.tipodniService.getTipoDni().subscribe(
@@ -118,12 +120,17 @@ export class EmpleadoComponent implements OnInit {
   //Metodo al enviar el fomulario
   public agregarEmpleado(empleado: Empleado) {
 
-    if (this.formEmpleado.get('password').value === this.formEmpleado.get('passwordRepeat').value) {
+    console.log(typeof this.formEmpleado.get('password').value);
+    console.log(typeof this.formEmpleado.get('passwordRepeat').value);
+
+    if (this.formEmpleado.get('password').value == this.formEmpleado.get('passwordRepeat').value) {
       this.passwordsDistintas = false;
 
       //Nos suscribimos al servicio y traemos el metodo del backend
       this.empleadoServices.onCreateEmpleado(empleado).subscribe(
         data => {
+          console.log(data);
+
           //this.tokenStorage.saveToken(data);
 
           if (data === 1) {
@@ -151,6 +158,7 @@ export class EmpleadoComponent implements OnInit {
     } else {
       this.passwordsDistintas = true;
       this.message = "Las constraseñas no coinciden";
+      swal.fire('Oops...', this.message, 'error')
     }
   }
 
@@ -200,7 +208,7 @@ export class EmpleadoComponent implements OnInit {
           reader.onload = (e) => {
 
             this.fotoUsuario = e.target.result;
-            this.selectedEmpleado.FotoPerfil = this.fotoUsuario;
+            this.selectedEmpleado.fotoPerfil = this.fotoUsuario;
           }
           reader.readAsDataURL(file)
         } else {

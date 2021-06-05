@@ -25,8 +25,8 @@ namespace clip_money.Controllers
             return gEmpleados.ObtenerEmpleados();
         }
 
-        //[Authorize]
-        // GET: api/Cliente/"número de id"
+        ////[Authorize]
+        //// GET: api/Cliente/"número de id"
         [HttpGet]
         [Route("api/Empleados/{legajo}")]
         public Empleado Get(int legajo)
@@ -38,9 +38,9 @@ namespace clip_money.Controllers
         // POST: api/Empleado
         [HttpPost]
         public int Post([FromBody] Empleado nuevo)
-        {
+        {            
             GestorEmpleado gEmpleado = new GestorEmpleado();
-            return gEmpleado.altaEmpleado(nuevo);
+            return gEmpleado.nuevoEmpleado(nuevo);
         }
     }
 }

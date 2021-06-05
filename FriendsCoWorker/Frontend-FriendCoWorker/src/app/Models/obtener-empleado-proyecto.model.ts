@@ -4,4 +4,5 @@ export class ProyectosEmpleado{
   Empresa: string;
   Descripcion: string;
   Imagen_mockup: string;
+  Id_proyecto: number;
 }

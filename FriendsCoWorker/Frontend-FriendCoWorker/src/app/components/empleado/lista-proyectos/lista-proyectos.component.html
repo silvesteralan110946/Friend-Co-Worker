@@ -7,56 +7,71 @@
 
 
   <div class="container">
-    <br>
+    <br><br>
 
-
-    <div *ngFor="let proyecto of proyectoEmpleado">
-      <div *ngIf="proyecto.legajo == idEmpleado">
-        <div class="card">
-          <table class="table table-hover shopping-cart-wrap">
-            <thead class="text-muted">
-              <tr>
-                <th scope="col">Proyecto</th>
-                <th scope="col" width="160">Empresa</th>
-                <th scope="col" width="200" class="text-center">Acción</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <figure class="media">
-                    <div class="img-wrap"><img [src]="proyecto.img_mockup" class="img-thumbnail img-sm"></div>
-                    <figcaption class="media-body">
-                      <!-- <h6 class="title text-truncate">Product name goes here </h6> -->
-                      <dl class="param param-inline small">
-                        <dt>Nombre proyecto: </dt>
-                        <dd> {{proyecto.nombre_proyecto}} </dd>
-                      </dl>
-                      <dl class="param param-inline small">
-                        <dt>Descripción: </dt>
-                        <dd>{{proyecto.descripcion}}</dd>
-                      </dl>
-                    </figcaption>
-                  </figure>
-                </td>
-
-                <td>
-                  <div class="price-wrap">
-                    <var class="price">{{proyecto.empresa}}</var>
-                  </div> <!-- price-wrap .// -->
-                </td>
-                <td class="text-right">
-                  <a href="" class="btn btn-outline-danger"> Salir de proyecto</a>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
-        </div> <!-- card.// -->
-        <br>
+    <div class="card mb-3 card-novisible" *ngIf="this.validar == 0">
+      <div style="text-align: center;">
+        <img class="imagen" src="../../../../assets/images/Man_Working_at_his_Desk_GIF_Animation_Loop.gif" alt="develop">
+      </div>
+      <div class="card-body">
+        <p class="card-text text-center parrafo"><strong>No te encuentras en ningún proyecto todavía.</strong></p>
+        <p class="card-text text-center" style="font-size: 20px;">Sumate a uno ahora!!</p>
+        <button class="btn btn-primary text-center botonSumar" style="margin: 0 auto;" (click)="redireccion()">Sumarme!</button>
       </div>
     </div>
+
+    <div *ngFor="let proyecto of proyectoEmpleado">
+
+
+
+      <!-- <div *ngIf="proyecto.legajo == idEmpleado"> -->
+
+      <div class="card">
+        <table class="table table-hover shopping-cart-wrap">
+          <thead class="text-muted">
+            <tr>
+              <th scope="col">Proyecto</th>
+              <th scope="col" width="40">Empresa</th>
+              <th scope="col" width="200" class="text-center">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <figure class="media">
+                  <div class="img-wrap"><img [src]="proyecto.img_mockup" class="img-thumbnail img-sm"></div>
+                  <figcaption class="media-body">
+                    <!-- <h6 class="title text-truncate">Product name goes here </h6> -->
+                    <dl>
+                      <dt>Nombre proyecto: </dt>
+                      <dd> {{proyecto.nombre_proyecto}} </dd>
+                    </dl>
+                    <dl>
+                      <dt>Descripción: </dt>
+                      <dd>{{proyecto.descripcion}}</dd>
+                    </dl>
+                  </figcaption>
+                </figure>
+              </td>
+
+              <td>
+                <div class="price-wrap">
+                  <var class="price">{{proyecto.empresa}}</var>
+                </div> <!-- price-wrap .// -->
+              </td>
+              <td class="text-right">
+                <button (click)="salirDeProyecto(proyecto.id_proyecto)" class="btn btn-outline-danger"> Salir de
+                  proyecto</button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div> <!-- card.// -->
+      <br>
+    </div>
   </div>
+  <!-- </div> -->
   <!--container end.//-->
 
 
