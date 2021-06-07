@@ -2,10 +2,15 @@
 
 <body>
 
-  <h1 id="pageHeaderTitle" class="h1 text-center"
+  <img class="imgHeader" src="../../../assets/images/proyect2.png" alt="imgProyecto">
+
+  <!-- <h1 id="pageHeaderTitle" class="h1 text-center"
     style="text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;">
-    Proyectos</h1>
+    Proyectos</h1> -->
+
+
   <main class="container">
+
     <div *ngFor="let proyecto of listProyectos">
       <div class="h1 text-center" id="pageHeaderTitle">
       </div>
@@ -18,7 +23,7 @@
           <h1 class="postcard__title blue"><a href="#">{{ proyecto.Nombre }}</a></h1>
           <div class="postcard__subtitle small">
             <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2 mb-2"></i> Fecha de creación: {{ proyecto.FechaCreacion }}    //
+              <i class="fas fa-calendar-alt mr-2 mb-2"></i> Fecha de creación: {{ proyecto.FechaCreacion }} //
             </time>
             <time datetime="2020-05-25 12:00:00">
               <i class="fas fa-calendar-alt mr-2 mt-2"></i>Fecha de fin: {{ proyecto.FechaFin }}
@@ -28,10 +33,11 @@
           <div class="postcard__bar"></div>
           <div class="postcard__subtitle small">
             <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2 mt-2"></i> Fecha real de creación: {{ proyecto.Fecha_real_creacion }}    //
+              <i class="fas fa-calendar-alt mr-2 mt-2"></i> Fecha real de creación: {{ proyecto.Fecha_real_creacion }}
+              //
             </time>
             <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2 mt-2"></i> Fecha real de creación: {{ proyecto.Fecha_real_creacion }}
+              <i class="fas fa-calendar-alt mr-2 mt-2"></i> Fecha real de fin: {{ proyecto.Fecha_real_creacion }}
             </time>
           </div>
 
@@ -41,11 +47,39 @@
           <div class="postcard__preview-txt small">Empresa: {{ proyecto.Empresa }}</div>
 
           <ul class="postcard__tagbox mt-1">
-            <button class="tag__item"><i class="fas fa-tag mr-2"></i>VOTAR</button>
-            <button class="tag__item" (click)="sumarProyecto(proyecto.Id_proyecto)"><i class="fas fa-clock mr-2" ></i>SUMARSE</button>
+            <!-- <button class="tag__item btn-sm"><i class="fas fa-tag mr-2"></i>VOTAR</button> -->
+            <button href="#victorModal" role="button" class="tag__item btn-sm" data-toggle="modal"
+              (click)="idProyecto(proyecto.Id_proyecto)"><i class="fas fa-comment-dots mr-2"></i>COMENTAR</button>
+            <button class="tag__item" (click)="sumarProyecto(proyecto.Id_proyecto)"><i
+                class="fas fa-clock mr-2"></i>SUMARSE</button>
+            <button class="tag__item btn-sm"><i class="fas fa-comment-dots mr-2"></i>VER COMENTARIOS</button>
           </ul>
         </div>
+
+        <!-- Modal / Ventana / Overlay en HTML -->
+        <div id="victorModal" class="modal fade" style="margin-top: 300px;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">{{proyecto.Id_proyecto}}</h4>
+            </div> -->
+              <div class="modal-body">
+                <p class="text-primary">Escribe tu comentario!!</p>
+                <textarea id="cometario" [(ngModel)]="comentario" rows="3"
+                  style="width: 100%; border-radius: 5px; border-color: #0674a7;" required></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-danger" data-dismiss="modal">CERRAR</button>
+                <button type="button" class="btn btn-sm btn-outline-success" data-dismiss="modal"
+                  (click)="agregarComentario()">ACEPTAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </article>
+
     </div>
   </main>
 

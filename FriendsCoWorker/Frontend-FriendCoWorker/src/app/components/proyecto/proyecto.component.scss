@@ -82,6 +82,7 @@ a, a:hover {
     transition: width 0.2s ease;
   }
 
+
   .postcard__text {
     padding: 1.5rem;
     position: relative;
@@ -121,6 +122,7 @@ a, a:hover {
     }
   }
 
+
   &:before {
     content: "";
     position: absolute;
@@ -136,6 +138,13 @@ a, a:hover {
   &:hover .postcard__bar {
     width: 100px;
   }
+}
+
+.imgHeader{
+  display: flex;
+  margin: 0 auto;
+  height: 300px;
+  width: 700px;
 }
 
 @media screen and (min-width: 769px) {
@@ -293,6 +302,15 @@ a, a:hover {
 	);
 }
 
+
+
+@media (min-width: 300px) and (max-width: 500px){
+  .imgHeader{
+    height: 200px !important;
+    width: 400px !important;
+  }
+}
+
 @media screen and (min-width: 769px) {
 	.green::before {
 		background-image: linear-gradient(
@@ -308,6 +326,8 @@ a, a:hover {
 			transparent 50%
 		);
 	}
+
+
 
 	.blue::before {
 		background-image: linear-gradient(
