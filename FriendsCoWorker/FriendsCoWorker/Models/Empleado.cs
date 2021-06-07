@@ -6,9 +6,8 @@ using System.Web;
 namespace FriendsCoWorker.Models
 {
     public class Empleado
-    {
-        
-        private int legajo = 30;
+    {        
+        private int legajo;
         private string nombre;
         private string apellido;
         private string sexo;

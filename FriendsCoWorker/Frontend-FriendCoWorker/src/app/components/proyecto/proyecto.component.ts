@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 import { EmpleadoXProyecto } from 'src/app/Models/empleado-proyecto.model';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
+import { ComentarioProyectoInterface } from 'src/app/Models/cometario-proyecto.model';
+import { CometariosProyectosService } from 'src/app/services/cometarios-proyectos.service';
 
 @Component({
   selector: 'app-proyecto',
@@ -20,8 +22,11 @@ export class ProyectoComponent implements OnInit {
   idEmpleado: number;
   message: string;
   isCreateFailed: boolean;
+  comentario: string;
+  idproyecto: number;
 
-  constructor(private proyectoServices: ProyectoService, private empledoProyectoServices: EmpleadoProyectoService, private tokenStorage: TokenStorageService, private router: Router) { }
+  constructor(private proyectoServices: ProyectoService, private empledoProyectoServices: EmpleadoProyectoService,
+    private tokenStorage: TokenStorageService, private router: Router, private comentarioProyectoServices: CometariosProyectosService) { }
 
   ngOnInit(): void {
     this.proyectoServices.getProyectos().subscribe(
@@ -77,4 +82,21 @@ export class ProyectoComponent implements OnInit {
       }
     })
   }
+
+  idProyecto(id_proyecto: number){
+    this.idproyecto = id_proyecto;
+    console.log(id_proyecto);
+  }
+
+  proyecto(id_proyecto: number){
+    alert(id_proyecto);
+  }
+
+  agregarComentario(){
+    let selectedComentario: ComentarioProyectoInterface = new ComentarioProyectoInterface(this.idEmpleado, this.comentario, this.idproyecto);
+    this.comentarioProyectoServices.onCreateCometarioProyecto(selectedComentario).subscribe(
+      data => {
+        Swal.fire('Enviado', 'Comentario sumado con exito', 'success');
+      }
+    )}
 }

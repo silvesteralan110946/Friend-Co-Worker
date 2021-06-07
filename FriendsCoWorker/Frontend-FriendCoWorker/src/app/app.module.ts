@@ -20,6 +20,7 @@ import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { NuevoProyectoComponent } from './components/proyecto/nuevo-proyecto/nuevo-proyecto.component';
 import { SumarAProyectoComponent } from './components/proyecto/sumar-a-proyecto/sumar-a-proyecto.component';
 import { ListaProyectosComponent } from './components/empleado/lista-proyectos/lista-proyectos.component';
+import { ValorarProyectoComponent } from './components/proyecto/valorar-proyecto/valorar-proyecto.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ListaProyectosComponent } from './components/empleado/lista-proyectos/l
     ProyectoComponent,
     NuevoProyectoComponent,
     SumarAProyectoComponent,
-    ListaProyectosComponent
+    ListaProyectosComponent,
+    ValorarProyectoComponent
   ],
   imports: [
     BrowserModule,

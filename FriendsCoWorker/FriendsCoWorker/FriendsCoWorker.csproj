@@ -142,6 +142,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos\GestorComentarioProyecto.cs" />
     <Compile Include="AccesoDatos\GestorEmpleado.cs" />
     <Compile Include="AccesoDatos\GestorEmpleadoProyecto.cs" />
     <Compile Include="AccesoDatos\GestorListEmpleadoProyecto.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ComentarioProyectoController.cs" />
     <Compile Include="Controllers\EmpleadoIdController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\EmpleadoProyectoController.cs" />
@@ -169,6 +171,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ModelsReports\ListProyectoEmpleado.cs" />
+    <Compile Include="Models\ComentariosProyectos.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\EmpleadoXProyecto.cs" />
     <Compile Include="Models\Localidad.cs" />
