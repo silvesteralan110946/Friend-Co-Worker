@@ -18,7 +18,6 @@ import { ObtenerEmpleadoComponent } from './components/empleado/obtener-empleado
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { NuevoProyectoComponent } from './components/proyecto/nuevo-proyecto/nuevo-proyecto.component';
-import { SumarAProyectoComponent } from './components/proyecto/sumar-a-proyecto/sumar-a-proyecto.component';
 import { ListaProyectosComponent } from './components/empleado/lista-proyectos/lista-proyectos.component';
 import { ValorarProyectoComponent } from './components/proyecto/valorar-proyecto/valorar-proyecto.component';
 
@@ -34,7 +33,6 @@ import { ValorarProyectoComponent } from './components/proyecto/valorar-proyecto
     InicioComponent,
     ProyectoComponent,
     NuevoProyectoComponent,
-    SumarAProyectoComponent,
     ListaProyectosComponent,
     ValorarProyectoComponent
   ],

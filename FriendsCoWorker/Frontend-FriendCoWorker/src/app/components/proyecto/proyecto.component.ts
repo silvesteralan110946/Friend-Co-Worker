@@ -8,6 +8,8 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
 import { ComentarioProyectoInterface } from 'src/app/Models/cometario-proyecto.model';
 import { CometariosProyectosService } from 'src/app/services/cometarios-proyectos.service';
+import { ValoresProyectoInterface } from 'src/app/Models/valores-proyecto.model';
+import { ValorarProyectoService } from 'src/app/services/valorar-proyecto.service';
 
 @Component({
   selector: 'app-proyecto',
@@ -24,9 +26,17 @@ export class ProyectoComponent implements OnInit {
   isCreateFailed: boolean;
   comentario: string;
   idproyecto: number;
+  nombre_proyecto: string;
+
+  funcionalidad: number;
+  documentacion: number;
+  diseño: number;
+  retro: number;
+  tiempo: number;
 
   constructor(private proyectoServices: ProyectoService, private empledoProyectoServices: EmpleadoProyectoService,
-    private tokenStorage: TokenStorageService, private router: Router, private comentarioProyectoServices: CometariosProyectosService) { }
+    private tokenStorage: TokenStorageService, private router: Router, private comentarioProyectoServices: CometariosProyectosService,
+    private valoresServices: ValorarProyectoService) { }
 
   ngOnInit(): void {
     this.proyectoServices.getProyectos().subscribe(
@@ -38,9 +48,11 @@ export class ProyectoComponent implements OnInit {
 
     this.idEmpleado = this.tokenStorage.getIdEmpleado();
     console.log(this.idEmpleado);
+
+    console.log(this.funcionalidad)
   }
 
-  sumarProyecto(id: number){
+  sumarProyecto(id: number) {
     console.log(id);
     Swal.fire({
       title: '¿Se quiere sumar a este proyecto?',
@@ -51,28 +63,28 @@ export class ProyectoComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         //Nos suscribimos al servicio y traemos el metodo del backend
-      let selectedEmpleado: EmpleadoXProyecto = new EmpleadoXProyecto(this.idEmpleado, id);
-      this.empledoProyectoServices.onCreateProyectoEmpleado(selectedEmpleado).subscribe(
-        data => {
-          //this.tokenStorage.saveToken(data);
-          if (data === 1) {
-            this.message = 'Usted ya se encuentra registrado en este proyecto';
-            Swal.fire('Oops...', this.message, 'error')
-            this.isCreateFailed = true;
-          }
-          else if (data === 0) {
-            Swal.fire('Enhorabuena', 'Empleado registrado a proyecto exitosamente', 'success');
-            this.isCreateFailed = false;
-            //this.clientes.push(data);
-          }
-        });
+        let selectedEmpleado: EmpleadoXProyecto = new EmpleadoXProyecto(this.idEmpleado, id);
+        this.empledoProyectoServices.onCreateProyectoEmpleado(selectedEmpleado).subscribe(
+          data => {
+            //this.tokenStorage.saveToken(data);
+            if (data === 1) {
+              this.message = 'Usted ya se encuentra registrado en este proyecto';
+              Swal.fire('Oops...', this.message, 'error')
+              this.isCreateFailed = true;
+            }
+            else if (data === 0) {
+              Swal.fire('Enhorabuena', 'Empleado registrado a proyecto exitosamente', 'success');
+              this.isCreateFailed = false;
+              //this.clientes.push(data);
+            }
+          });
         Swal.fire(
           'Sumado!',
           'Ahora eres parte del proyecto.',
           'success'
         )
-      // For more information about handling dismissals please visit
-      // https://sweetalert2.github.io/#handling-dismissals
+        // For more information about handling dismissals please visit
+        // https://sweetalert2.github.io/#handling-dismissals
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelado',
@@ -83,20 +95,67 @@ export class ProyectoComponent implements OnInit {
     })
   }
 
-  idProyecto(id_proyecto: number){
+  idProyecto(id_proyecto: number) {
     this.idproyecto = id_proyecto;
     console.log(id_proyecto);
   }
 
-  proyecto(id_proyecto: number){
-    alert(id_proyecto);
+  idValorar(id_proyecto: number, nombre_proyecto: string) {
+    this.idproyecto = id_proyecto;
+    this.nombre_proyecto = nombre_proyecto;
   }
 
-  agregarComentario(){
+  setFuncionalidad(valor: number) {
+    this.funcionalidad = valor;
+  }
+
+  setDocumentacion(valor: number) {
+    this.documentacion = valor;
+  }
+
+  setDisenio(valor: number) {
+    this.diseño = valor;
+  }
+
+  setRetro(valor: number) {
+    this.retro = valor;
+  }
+
+  setTiempo(valor: number) {
+    this.tiempo = valor;
+  }
+
+  limpiarDatos() {
+    this.funcionalidad = 0;
+    this.documentacion = 0;
+    this.diseño = 0;
+    this.retro = 0;
+    this.tiempo = 0;
+  }
+
+  agregarValorProyecto() {
+    let selectedVotacion: ValoresProyectoInterface = new ValoresProyectoInterface(this.idproyecto, this.funcionalidad, this.documentacion,
+      this.diseño, this.retro, this.tiempo, this.idEmpleado);
+    this.valoresServices.onCreateValorarProyecto(selectedVotacion).subscribe(
+      data => {
+        if (data == 1) {
+          Swal.fire('Error', 'Ya valoraste este proyecto', 'error');
+          this.limpiarDatos();
+        } else {
+          Swal.fire('Enviado', 'Valor sumado con exito', 'success');
+          this.limpiarDatos();
+        }
+        console.log(data);
+      }
+    )
+  }
+
+  agregarComentario() {
     let selectedComentario: ComentarioProyectoInterface = new ComentarioProyectoInterface(this.idEmpleado, this.comentario, this.idproyecto);
     this.comentarioProyectoServices.onCreateCometarioProyecto(selectedComentario).subscribe(
       data => {
         Swal.fire('Enviado', 'Comentario sumado con exito', 'success');
       }
-    )}
+    )
+  }
 }
