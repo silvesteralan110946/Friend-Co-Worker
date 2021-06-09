@@ -12,7 +12,7 @@ namespace FriendsCoWorker.AccesoDatos
     {
         public int validarLogin(LoginRequest loginRequest)
         {
-            Empleado empl = null;
+            //Empleado empl = null;
             GestorValidarPassword gvPassword = new GestorValidarPassword();
 
             string strConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();

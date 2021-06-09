@@ -47,8 +47,9 @@
           <div class="postcard__preview-txt small">Empresa: {{ proyecto.Empresa }}</div>
 
           <ul class="postcard__tagbox mt-1">
-            <!-- <button class="tag__item btn-sm"><i class="fas fa-tag mr-2"></i>VOTAR</button> -->
-            <button href="#victorModal" role="button" class="tag__item btn-sm" data-toggle="modal"
+            <button href="#valorar" class="tag__item btn-sm" data-toggle="modal"
+              (click)="idValorar(proyecto.Id_proyecto, proyecto.Nombre)"><i class="fas fa-tag mr-2"></i>VOTAR</button>
+            <button href="#comentar" role="button" class="tag__item btn-sm" data-toggle="modal"
               (click)="idProyecto(proyecto.Id_proyecto)"><i class="fas fa-comment-dots mr-2"></i>COMENTAR</button>
             <button class="tag__item" (click)="sumarProyecto(proyecto.Id_proyecto)"><i
                 class="fas fa-clock mr-2"></i>SUMARSE</button>
@@ -56,14 +57,10 @@
           </ul>
         </div>
 
-        <!-- Modal / Ventana / Overlay en HTML -->
-        <div id="victorModal" class="modal fade" style="margin-top: 300px;">
+        <!-- COMENTARIOS -->
+        <div id="comentar" class="modal fade" style="margin-top: 300px;">
           <div class="modal-dialog">
-            <div class="modal-content">
-              <!-- <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">{{proyecto.Id_proyecto}}</h4>
-            </div> -->
+            <div class="modal-content ventanaEmergente">
               <div class="modal-body">
                 <p class="text-primary">Escribe tu comentario!!</p>
                 <textarea id="cometario" [(ngModel)]="comentario" rows="3"
@@ -77,6 +74,108 @@
             </div>
           </div>
         </div>
+
+
+
+        <!-- VOTAR -->
+        <div id="valorar" class="modal fade" style="margin-top: 300px;">
+          <div class="modal-dialog">
+            <div class="modal-content ventanaEmergente">
+              <div class="modal-header">
+                <p class="text-primary ml-3"><strong> Valorá el proyecto: {{ nombre_proyecto }}</strong></p>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Funcionalidad:</label>
+                  <p class="clasificacion1" style="cursor: pointer;">
+                    <input id="funcionalidad1" type="radio" name="funcionalidad" value="5" (click)="setFuncionalidad(5)">
+                    <label for="funcionalidad1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="funcionalidad2" type="radio" name="funcionalidad" value="4" (click)="setFuncionalidad(4)">
+                    <label for="funcionalidad2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="funcionalidad3" type="radio" name="funcionalidad" value="3" (click)="setFuncionalidad(3)">
+                    <label for="funcionalidad3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="funcionalidad4" type="radio" name="funcionalidad" value="2" (click)="setFuncionalidad(2)">
+                    <label for="funcionalidad4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="funcionalidad5" type="radio" name="funcionalidad" value="1" (click)="setFuncionalidad(1)">
+                    <label for="funcionalidad5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Documentación:</label>
+                  <p class="clasificacion2" style="cursor: pointer;">
+                    <input id="documentacion1" type="radio" name="documentacion" value="5" (click)="setDocumentacion(5)">
+                    <label for="documentacion1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="documentacion2" type="radio" name="documentacion" value="4" (click)="setDocumentacion(4)">
+                    <label for="documentacion2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="documentacion3" type="radio" name="documentacion" value="3" (click)="setDocumentacion(3)">
+                    <label for="documentacion3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="documentacion4" type="radio" name="documentacion" value="2" (click)="setDocumentacion(2)">
+                    <label for="documentacion4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="documentacion5" type="radio" name="documentacion" value="1" (click)="setDocumentacion(1)">
+                    <label for="documentacion5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Diseño:</label>
+                  <p class="clasificacion3" style="cursor: pointer;">
+                    <input id="Diseño1" type="radio" name="Diseño" value="5" (click)="setDisenio(5)">
+                    <label for="Diseño1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Diseño2" type="radio" name="Diseño" value="4" (click)="setDisenio(4)">
+                    <label for="Diseño2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Diseño3" type="radio" name="Diseño" value="3" (click)="setDisenio(3)">
+                    <label for="Diseño3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Diseño4" type="radio" name="Diseño" value="2" (click)="setDisenio(2)">
+                    <label for="Diseño4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Diseño5" type="radio" name="Diseño" value="1" (click)="setDisenio(1)">
+                    <label for="Diseño5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Retro-alimentación:</label>
+                  <p class="clasificacion4" style="cursor: pointer;">
+                    <input id="retroalimentacion1" type="radio" name="retroalimentacion" value="5" (click)="setRetro(5)">
+                    <label for="retroalimentacion1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="retroalimentacion2" type="radio" name="retroalimentacion" value="4" (click)="setRetro(4)">
+                    <label for="retroalimentacion2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="retroalimentacion3" type="radio" name="retroalimentacion" value="3" (click)="setRetro(3)">
+                    <label for="retroalimentacion3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="retroalimentacion4" type="radio" name="retroalimentacion" value="2" (click)="setRetro(2)">
+                    <label for="retroalimentacion4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="retroalimentacion5" type="radio" name="retroalimentacion" value="1" (click)="setRetro(1)">
+                    <label for="retroalimentacion5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Tiempo de entrega:</label>
+                  <p class="clasificacion5" style="cursor: pointer;">
+                    <input id="tiempo_de_entrega1" type="radio" name="tiempo_de_entrega" value="5" (click)="setTiempo(5)">
+                    <label for="tiempo_de_entrega1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="tiempo_de_entrega2" type="radio" name="tiempo_de_entrega" value="4" (click)="setTiempo(4)">
+                    <label for="tiempo_de_entrega2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="tiempo_de_entrega3" type="radio" name="tiempo_de_entrega" value="3" (click)="setTiempo(3)">
+                    <label for="tiempo_de_entrega3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="tiempo_de_entrega4" type="radio" name="tiempo_de_entrega" value="2" (click)="setTiempo(2)">
+                    <label for="tiempo_de_entrega4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="tiempo_de_entrega5" type="radio" name="tiempo_de_entrega" value="1" (click)="setTiempo(1)">
+                    <label for="tiempo_de_entrega5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-danger" data-dismiss="modal">CERRAR</button>
+                <button type="button" class="btn btn-sm btn-outline-success" data-dismiss="modal" (click)="agregarValorProyecto()">VOTAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
       </article>
 

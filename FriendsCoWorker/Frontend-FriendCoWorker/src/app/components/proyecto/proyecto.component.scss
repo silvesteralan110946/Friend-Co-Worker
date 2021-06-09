@@ -10,23 +10,24 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 /* This pen */
 body {
-	font-family: "Baloo 2", cursive;
-	font-size: 16px;
-	color: #ffffff;
-	text-rendering: optimizeLegibility;
-	background: #110f16;
-	font-weight: initial;
+  font-family: "Baloo 2", cursive;
+  font-size: 16px;
+  color: #ffffff;
+  text-rendering: optimizeLegibility;
+  background: #110f16;
+  font-weight: initial;
 }
-a, a:hover {
-	text-decoration: none;
-	transition: color 0.3s ease-in-out;
+a,
+a:hover {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 #pageHeaderTitle {
   padding: 20px;
-	text-transform: uppercase;
-	text-align: center;
-	font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
   margin: 0 auto;
   padding-top: 20px;
 }
@@ -47,16 +48,16 @@ a, a:hover {
     color: inherit;
   }
 
-	h1,	.h1 {
-		margin-bottom: 0.5rem;
-		font-weight: 500;
-		line-height: 1.2;
+  h1,
+  .h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 
-	}
-
-	.small {
-		font-size: 90%;
-	}
+  .small {
+    font-size: 90%;
+  }
 
   .postcard__title {
     font-size: 1.75rem;
@@ -82,7 +83,6 @@ a, a:hover {
     transition: width 0.2s ease;
   }
 
-
   .postcard__text {
     padding: 1.5rem;
     position: relative;
@@ -102,7 +102,7 @@ a, a:hover {
     flex-flow: row wrap;
     font-size: 14px;
     margin: 20px 0 0 0;
-		padding: 0;
+    padding: 0;
     justify-content: center;
 
     .tag__item {
@@ -114,14 +114,13 @@ a, a:hover {
       cursor: pointer;
       user-select: none;
       transition: background-color 0.3s;
-      color: white  ;
+      color: white;
 
       &:hover {
         background: #0674a7;
       }
     }
   }
-
 
   &:before {
     content: "";
@@ -140,11 +139,69 @@ a, a:hover {
   }
 }
 
-.imgHeader{
+.imgHeader {
   display: flex;
   margin: 0 auto;
   height: 300px;
   width: 700px;
+}
+
+label {
+  color: grey;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.clasificacion1 {
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
+}
+
+.clasificacion2 {
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
+}
+
+.clasificacion3 {
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
+}
+
+.clasificacion4 {
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
+}
+
+.clasificacion5 {
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
+}
+
+
+label:hover {
+  color: #1493cc;
+}
+
+label:hover ~ label {
+  color: #1493cc;
+}
+
+input[type="radio"]:checked ~ label {
+  color: #1493cc;
+}
+
+i{
+  cursor: pointer;
+}
+
+.ventanaEmergente{
+  border-radius: 30px;
+  border: solid;
+  border-width: 3px;
+  border-color: #110f16;
+  width: 120%;
 }
 
 @media screen and (min-width: 769px) {
@@ -186,32 +243,32 @@ a, a:hover {
       transform: scale(1.1);
     }
 
-    &:nth-child(2n+1) {
+    &:nth-child(2n + 1) {
       flex-direction: row;
     }
 
-    &:nth-child(2n+0) {
+    &:nth-child(2n + 0) {
       flex-direction: row-reverse;
     }
 
-    &:nth-child(2n+1) .postcard__text::before {
+    &:nth-child(2n + 1) .postcard__text::before {
       left: -12px !important;
       transform: rotate(4deg);
     }
 
-    &:nth-child(2n+0) .postcard__text::before {
+    &:nth-child(2n + 0) .postcard__text::before {
       right: -12px !important;
       transform: rotate(-4deg);
     }
   }
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .postcard {
     .postcard__text {
       padding: 2rem 3.5rem;
     }
 
-		.postcard__text:before {
+    .postcard__text:before {
       content: "";
       position: absolute;
       display: block;
@@ -225,142 +282,162 @@ a, a:hover {
 
 /* COLORS */
 .postcard .postcard__tagbox .green.play:hover {
-	background: $main-green;
-	color: black;
+  background: $main-green;
+  color: black;
 }
 .green .postcard__title:hover {
-	color: $main-green;
+  color: $main-green;
 }
 .green .postcard__bar {
-	background-color: $main-green;
+  background-color: $main-green;
 }
 .green::before {
-	background-image: linear-gradient(
-		-30deg,
-		$main-green-rgb-015,
-		transparent 50%
-	);
+  background-image: linear-gradient(
+    -30deg,
+    $main-green-rgb-015,
+    transparent 50%
+  );
 }
 .green:nth-child(2n)::before {
-	background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
+  background-image: linear-gradient(
+    30deg,
+    $main-green-rgb-015,
+    transparent 50%
+  );
 }
 
 .postcard .postcard__tagbox .blue.play:hover {
-	background: $main-blue;
+  background: $main-blue;
 }
 .blue .postcard__title:hover {
-	color: $main-blue;
+  color: $main-blue;
 }
 .blue .postcard__bar {
-	background-color: $main-blue;
+  background-color: $main-blue;
 }
 .blue::before {
-	background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
+  background-image: linear-gradient(
+    -30deg,
+    $main-blue-rgb-015,
+    transparent 50%
+  );
 }
 .blue:nth-child(2n)::before {
-	background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+  background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
 }
 
 .postcard .postcard__tagbox .red.play:hover {
-	background: $main-red;
+  background: $main-red;
 }
 .red .postcard__title:hover {
-	color: $main-red;
+  color: $main-red;
 }
 .red .postcard__bar {
-	background-color: $main-red;
+  background-color: $main-red;
 }
 .red::before {
-	background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
+  background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
 }
 .red:nth-child(2n)::before {
-	background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+  background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
 }
 
 .postcard .postcard__tagbox .yellow.play:hover {
-	background: $main-yellow;
-	color: black;
+  background: $main-yellow;
+  color: black;
 }
 .yellow .postcard__title:hover {
-	color: $main-yellow;
+  color: $main-yellow;
 }
 .yellow .postcard__bar {
-	background-color: $main-yellow;
+  background-color: $main-yellow;
 }
 .yellow::before {
-	background-image: linear-gradient(
-		-30deg,
-		$main-yellow-rgb-015,
-		transparent 50%
-	);
+  background-image: linear-gradient(
+    -30deg,
+    $main-yellow-rgb-015,
+    transparent 50%
+  );
 }
 .yellow:nth-child(2n)::before {
-	background-image: linear-gradient(
-		30deg,
-		$main-yellow-rgb-015,
-		transparent 50%
-	);
+  background-image: linear-gradient(
+    30deg,
+    $main-yellow-rgb-015,
+    transparent 50%
+  );
 }
 
-
-
-@media (min-width: 300px) and (max-width: 500px){
-  .imgHeader{
+@media (min-width: 300px) and (max-width: 500px) {
+  .imgHeader {
     height: 200px !important;
     width: 400px !important;
+  }
+
+  .ventanaEmergente{
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 769px) {
-	.green::before {
-		background-image: linear-gradient(
-			-80deg,
-			$main-green-rgb-015,
-			transparent 50%
-		);
-	}
-	.green:nth-child(2n)::before {
-		background-image: linear-gradient(
-			80deg,
-			$main-green-rgb-015,
-			transparent 50%
-		);
-	}
+  .green::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-green-rgb-015,
+      transparent 50%
+    );
+  }
+  .green:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-green-rgb-015,
+      transparent 50%
+    );
+  }
 
+  .blue::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-blue-rgb-015,
+      transparent 50%
+    );
+  }
+  .blue:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-blue-rgb-015,
+      transparent 50%
+    );
+  }
 
+  .red::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-red-rgb-015,
+      transparent 50%
+    );
+  }
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-red-rgb-015,
+      transparent 50%
+    );
+  }
 
-	.blue::before {
-		background-image: linear-gradient(
-			-80deg,
-			$main-blue-rgb-015,
-			transparent 50%
-		);
-	}
-	.blue:nth-child(2n)::before {
-		background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
-	}
-
-	.red::before {
-		background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
-	}
-	.red:nth-child(2n)::before {
-		background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
-	}
-
-	.yellow::before {
-		background-image: linear-gradient(
-			-80deg,
-			$main-yellow-rgb-015,
-			transparent 50%
-		);
-	}
-	.yellow:nth-child(2n)::before {
-		background-image: linear-gradient(
-			80deg,
-			$main-yellow-rgb-015,
-			transparent 50%
-		);
-	}
+  .yellow::before {
+    background-image: linear-gradient(
+      -80deg,
+      $main-yellow-rgb-015,
+      transparent 50%
+    );
+  }
+  .yellow:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      $main-yellow-rgb-015,
+      transparent 50%
+    );
+  }
 }
 
 body {
