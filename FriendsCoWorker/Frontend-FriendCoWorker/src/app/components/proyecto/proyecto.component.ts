@@ -125,14 +125,6 @@ export class ProyectoComponent implements OnInit {
     this.tiempo = valor;
   }
 
-  limpiarDatos() {
-    this.funcionalidad = 0;
-    this.documentacion = 0;
-    this.diseño = 0;
-    this.retro = 0;
-    this.tiempo = 0;
-  }
-
   agregarValorProyecto() {
     let selectedVotacion: ValoresProyectoInterface = new ValoresProyectoInterface(this.idproyecto, this.funcionalidad, this.documentacion,
       this.diseño, this.retro, this.tiempo, this.idEmpleado);
@@ -140,10 +132,8 @@ export class ProyectoComponent implements OnInit {
       data => {
         if (data == 1) {
           Swal.fire('Error', 'Ya valoraste este proyecto', 'error');
-          this.limpiarDatos();
         } else {
           Swal.fire('Enviado', 'Valor sumado con exito', 'success');
-          this.limpiarDatos();
         }
         console.log(data);
       }

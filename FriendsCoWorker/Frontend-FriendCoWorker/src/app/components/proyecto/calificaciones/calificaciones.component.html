@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+	<div class="row">
+	    <form class="col-md-4">
+	        <select class="form-control select2" [(ngModel)]="id_proyecto" id="idproyecto" name="idproyecto" required (change)="guardarId()">
+	          <option *ngFor="let proyectos of listProyectos" value={{proyectos.Id_proyecto}}>{{ proyectos.Nombre }}</option>
+	        </select>
+	    </form>
+      <button class="btn btn-primary" (click)="charUpdate()">ACEPTAR</button>
+      <!-- <p [hidden]="id_proyecto == 0">Haz seleccionado la opción # {{ verSeleccion }}</p> -->
+ 	</div>
+</div>
+
+<h1>{{ this.funcionalidad }}</h1>
+<h1>{{ this.nombre_proyecto }}</h1>
+
+<div class="container">
+  <div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
+          [chartType]="radarChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,8 @@ import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { NuevoProyectoComponent } from './components/proyecto/nuevo-proyecto/nuevo-proyecto.component';
 import { ListaProyectosComponent } from './components/empleado/lista-proyectos/lista-proyectos.component';
 import { ValorarProyectoComponent } from './components/proyecto/valorar-proyecto/valorar-proyecto.component';
+import { CalificacionesComponent } from './components/proyecto/calificaciones/calificaciones.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { ValorarProyectoComponent } from './components/proyecto/valorar-proyecto
     ProyectoComponent,
     NuevoProyectoComponent,
     ListaProyectosComponent,
-    ValorarProyectoComponent
+    ValorarProyectoComponent,
+    CalificacionesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { ValorarProyectoComponent } from './components/proyecto/valorar-proyecto
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
