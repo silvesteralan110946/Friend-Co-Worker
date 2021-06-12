@@ -76,7 +76,7 @@ a:hover {
 
   .postcard__bar {
     width: 80px;
-    height: 20px;
+    height: 4px;
     margin: 7px 0;
     border-radius: 5px;
     background-color: #424242;
@@ -119,6 +119,24 @@ a:hover {
       &:hover {
         background: #0674a7;
       }
+    }
+  }
+
+  .imgHeader {
+    display: flex;
+    margin: 0 auto;
+    height: 230px;
+    width: 830px;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    .imgHeader {
+      height: 130px !important;
+      width: 480px !important;
+    }
+
+    .ventanaEmergente{
+      width: 100%;
     }
   }
 

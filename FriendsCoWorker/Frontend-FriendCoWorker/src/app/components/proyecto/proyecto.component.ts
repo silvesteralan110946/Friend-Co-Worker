@@ -24,6 +24,7 @@ export class ProyectoComponent implements OnInit {
   idEmpleado: number;
   message: string;
   isCreateFailed: boolean;
+
   comentario: string;
   idproyecto: number;
   nombre_proyecto: string;

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmpleadoComponent } from './components/empleado/empleado.component';
 import { ListaProyectosComponent } from './components/empleado/lista-proyectos/lista-proyectos.component';
+import { ObtenerEmpleadoComponent } from './components/empleado/obtener-empleado/obtener-empleado.component';
 import { IndexComponent } from './components/index/index.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,12 +16,13 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'empleado', component: EmpleadoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'inicio', component: InicioComponent },
-  { path: 'proyecto', component: ProyectoComponent },
-  { path: 'nuevo-proyecto', component: NuevoProyectoComponent },
-  { path: 'list-proyecto', component: ListaProyectosComponent },
-  { path: 'calificaciones', component: CalificacionesComponent },
-  { path: '**', component: IndexComponent },
+  { path: 'inicio', component: InicioComponent, canActivate: [GuardService] },
+  { path: 'proyecto', component: ProyectoComponent, canActivate: [GuardService] },
+  { path: 'nuevo-proyecto', component: NuevoProyectoComponent, canActivate: [GuardService] },
+  { path: 'empleados', component: ObtenerEmpleadoComponent, canActivate: [GuardService] },
+  { path: 'list-proyecto', component: ListaProyectosComponent, canActivate: [GuardService] },
+  { path: 'calificaciones', component: CalificacionesComponent, canActivate: [GuardService] },
+  { path: '**', component: InicioComponent, canActivate: [GuardService] },
 ];
 
 @NgModule({
