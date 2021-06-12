@@ -166,6 +166,8 @@
     <Compile Include="Controllers\PromedioProyectoController.cs" />
     <Compile Include="Controllers\ProvinciaController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
+    <Compile Include="Controllers\ReComentarioProyectoController.cs" />
+    <Compile Include="Controllers\ReporteEmpleadosController.cs" />
     <Compile Include="Controllers\TipoDniController.cs" />
     <Compile Include="Controllers\TipoEmpleadoController.cs" />
     <Compile Include="Controllers\TokenGenerator.cs" />
@@ -174,8 +176,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelsReports\ReComentarioProyecto.cs" />
     <Compile Include="ModelsReports\ListProyectoEmpleado.cs" />
     <Compile Include="ModelsReports\PromedioProyecto.cs" />
+    <Compile Include="ModelsReports\ReEmpleados.cs" />
     <Compile Include="Models\ComentariosProyectos.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\EmpleadoXProyecto.cs" />

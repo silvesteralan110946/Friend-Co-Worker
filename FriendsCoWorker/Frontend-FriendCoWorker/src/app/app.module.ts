@@ -19,7 +19,6 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { NuevoProyectoComponent } from './components/proyecto/nuevo-proyecto/nuevo-proyecto.component';
 import { ListaProyectosComponent } from './components/empleado/lista-proyectos/lista-proyectos.component';
-import { ValorarProyectoComponent } from './components/proyecto/valorar-proyecto/valorar-proyecto.component';
 import { CalificacionesComponent } from './components/proyecto/calificaciones/calificaciones.component';
 import { ChartsModule } from 'ng2-charts';
 
@@ -36,7 +35,6 @@ import { ChartsModule } from 'ng2-charts';
     ProyectoComponent,
     NuevoProyectoComponent,
     ListaProyectosComponent,
-    ValorarProyectoComponent,
     CalificacionesComponent
   ],
   imports: [

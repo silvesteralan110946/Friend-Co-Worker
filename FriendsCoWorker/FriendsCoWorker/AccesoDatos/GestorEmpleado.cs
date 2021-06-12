@@ -1,4 +1,5 @@
 ﻿using FriendsCoWorker.Models;
+using FriendsCoWorker.ModelsReports;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -80,7 +81,6 @@ namespace FriendsCoWorker.AccesoDatos
                 throw;
             }
         }
-
 
 
         // OBTENER EMPLEADOS
@@ -314,6 +314,39 @@ namespace FriendsCoWorker.AccesoDatos
             osmtpClient.Credentials = new System.Net.NetworkCredential(emailOrigen, contraseña);
 
             osmtpClient.Send(oMailMessage);
+        }
+
+        // OBTENER EMPLEADOS REPORTE
+        public List<ReEmpleados> ObtenerEmpleadosReporte()
+        {
+            List<ReEmpleados> lista = new List<ReEmpleados>();
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand("obtenerReEmpleados", conn);
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlDataReader dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    int legajo = dr.GetInt32(0);
+                    string nombre = dr.GetString(1);
+                    string num_dni = dr.GetString(2);
+                    string foto_perfil = dr.GetString(3);
+                    string fechaNacimiento = dr.GetDateTime(4).Date.ToString("dd-MM-yyyy");
+                    string nombre_localidad = dr.GetString(5);
+                    string domicilio = dr.GetString(6);                    
+                    string email = dr.GetString(7);
+                    string tipo_empleado = dr.GetString(8);
+
+                    ReEmpleados emp = new ReEmpleados(legajo, nombre, num_dni, foto_perfil, fechaNacimiento, nombre_localidad, domicilio, email, tipo_empleado);
+                    lista.Add(emp);
+                }
+                dr.Close();
+            }
+            return lista;
         }
     }
 }
