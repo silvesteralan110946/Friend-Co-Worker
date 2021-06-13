@@ -9,7 +9,7 @@
       <div *ngFor="let empleado of listEmpleados">
         <article class="postcard light blue">
           <a class="postcard__img_link" href="#">
-            <img class="postcard__img" [src]="empleado.foto_perfil" alt="Image Title" />
+            <img class="postcard__img" [src]="empleado.foto_perfil" alt="Image Title" style="max-height: 322px;" />
           </a>
           <div class="postcard__text t-dark">
             <h1 class="postcard__title blue"><a href="#">{{ empleado.nombre }}</a></h1>
@@ -39,10 +39,109 @@
             <div class="postcard__bar"></div>
 
             <ul class="postcard__tagbox">
-              <button href="#valorar" class="tag__item btn-sm" data-toggle="modal"><i
-                  class="fas fa-tag mr-2"></i>VOTAR</button>
+              <button href="#valorar" class="tag__item btn-sm" data-toggle="modal"
+              (click)="idValorar(empleado.legajo, empleado.nombre)"><i class="fas fa-tag mr-2"></i>VOTAR</button>
             </ul>
           </div>
+
+          <!-- VOTAR -->
+        <div id="valorar" class="modal fade" style="margin-top: 300px;">
+          <div class="modal-dialog">
+            <div class="modal-content ventanaEmergente">
+              <div class="modal-header">
+                <p class="text-primary ml-3"><strong> Valorá a: {{ nombre_empleado }}</strong></p>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body">
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Comunicación:</label>
+                  <p class="clasificacion1" style="cursor: pointer;">
+                    <input id="Comunicacion1" type="radio" name="Comunicacion" value="5" (click)="setComunicacion(5)">
+                    <label for="Comunicacion1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Comunicacion2" type="radio" name="Comunicacion" value="4" (click)="setComunicacion(4)">
+                    <label for="Comunicacion2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Comunicacion3" type="radio" name="Comunicacion" value="3" (click)="setComunicacion(3)">
+                    <label for="Comunicacion3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Comunicacion4" type="radio" name="Comunicacion" value="2" (click)="setComunicacion(2)">
+                    <label for="Comunicacion4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="Comunicacion5" type="radio" name="Comunicacion" value="1" (click)="setComunicacion(1)">
+                    <label for="Comunicacion5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Desempeño:</label>
+                  <p class="clasificacion2" style="cursor: pointer;">
+                    <input id="desempenio1" type="radio" name="desempenio_individual" value="5" (click)="setDesempenio(5)">
+                    <label for="desempenio1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="desempenio2" type="radio" name="desempenio_individual" value="4" (click)="setDesempenio(4)">
+                    <label for="desempenio2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="desempenio3" type="radio" name="desempenio_individual" value="3" (click)="setDesempenio(3)">
+                    <label for="desempenio3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="desempenio4" type="radio" name="desempenio_individual" value="2" (click)="setDesempenio(2)">
+                    <label for="desempenio4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="desempenio5" type="radio" name="desempenio_individual" value="1" (click)="setDesempenio(1)">
+                    <label for="desempenio5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Trabajo en equipo:</label>
+                  <p class="clasificacion3" style="cursor: pointer;">
+                    <input id="trabajoEquipo1" type="radio" name="trabajoEquipo" value="5" (click)="setTrabajoEquipo(5)">
+                    <label for="trabajoEquipo1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="trabajoEquipo2" type="radio" name="trabajoEquipo" value="4" (click)="setTrabajoEquipo(4)">
+                    <label for="trabajoEquipo2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="trabajoEquipo3" type="radio" name="trabajoEquipo" value="3" (click)="setTrabajoEquipo(3)">
+                    <label for="trabajoEquipo3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="trabajoEquipo4" type="radio" name="trabajoEquipo" value="2" (click)="setTrabajoEquipo(2)">
+                    <label for="trabajoEquipo4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="trabajoEquipo5" type="radio" name="trabajoEquipo" value="1" (click)="setTrabajoEquipo(1)">
+                    <label for="trabajoEquipo5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Puntualidad:</label>
+                  <p class="clasificacion4" style="cursor: pointer;">
+                    <input id="puntualidad1" type="radio" name="puntualidad" value="5" (click)="setPuntualidad(5)">
+                    <label for="puntualidad1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="puntualidad2" type="radio" name="puntualidad" value="4" (click)="setPuntualidad(4)">
+                    <label for="puntualidad2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="puntualidad3" type="radio" name="puntualidad" value="3" (click)="setPuntualidad(3)">
+                    <label for="puntualidad3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="puntualidad4" type="radio" name="puntualidad" value="2" (click)="setPuntualidad(2)">
+                    <label for="puntualidad4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="puntualidad5" type="radio" name="puntualidad" value="1" (click)="setPuntualidad(1)">
+                    <label for="puntualidad5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+                <div class="row" style="    display: flex;
+                justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                  <label>Resolución de problemas:</label>
+                  <p class="clasificacion5" style="cursor: pointer;">
+                    <input id="resolucion_de_problemas1" type="radio" name="resolucion_de_problemas" value="5" (click)="setResolucionProblemas(5)">
+                    <label for="resolucion_de_problemas1"><i class="fas fa-star ml-2"></i></label>
+                    <input id="resolucion_de_problemas2" type="radio" name="resolucion_de_problemas" value="4" (click)="setResolucionProblemas(4)">
+                    <label for="resolucion_de_problemas2"><i class="fas fa-star ml-2"></i></label>
+                    <input id="resolucion_de_problemas3" type="radio" name="resolucion_de_problemas" value="3" (click)="setResolucionProblemas(3)">
+                    <label for="resolucion_de_problemas3"><i class="fas fa-star ml-2"></i></label>
+                    <input id="resolucion_de_problemas4" type="radio" name="resolucion_de_problemas" value="2" (click)="setResolucionProblemas(2)">
+                    <label for="resolucion_de_problemas4"><i class="fas fa-star ml-2"></i></label>
+                    <input id="resolucion_de_problemas5" type="radio" name="resolucion_de_problemas" value="1" (click)="setResolucionProblemas(1)">
+                    <label for="resolucion_de_problemas5"><i class="fas fa-star ml-2"></i></label>
+                  </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-danger" data-dismiss="modal">CERRAR</button>
+                <button type="button" class="btn btn-sm btn-outline-success" data-dismiss="modal" (click)="agregarValorEmpleado()">VOTAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
         </article>
       </div>
     </main>
