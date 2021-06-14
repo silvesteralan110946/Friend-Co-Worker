@@ -142,6 +142,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos\GestorComentarioEmpleado.cs" />
     <Compile Include="AccesoDatos\GestorComentarioProyecto.cs" />
     <Compile Include="AccesoDatos\GestorEmpleado.cs" />
     <Compile Include="AccesoDatos\GestorEmpleadoProyecto.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ComentarioEmpleadoController.cs" />
     <Compile Include="Controllers\ComentarioProyectoController.cs" />
     <Compile Include="Controllers\EmpleadoIdController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
@@ -164,9 +166,11 @@
     <Compile Include="Controllers\LocalidadController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PaisController.cs" />
+    <Compile Include="Controllers\PromedioEmpleadoController.cs" />
     <Compile Include="Controllers\PromedioProyectoController.cs" />
     <Compile Include="Controllers\ProvinciaController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
+    <Compile Include="Controllers\ReComentarioEmpleadoController.cs" />
     <Compile Include="Controllers\ReComentarioProyectoController.cs" />
     <Compile Include="Controllers\ReporteEmpleadosController.cs" />
     <Compile Include="Controllers\TipoDniController.cs" />
@@ -178,10 +182,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelsReports\PromedioEmpleado.cs" />
+    <Compile Include="ModelsReports\ReComentarioEmpleado.cs" />
     <Compile Include="ModelsReports\ReComentarioProyecto.cs" />
     <Compile Include="ModelsReports\ListProyectoEmpleado.cs" />
     <Compile Include="ModelsReports\PromedioProyecto.cs" />
     <Compile Include="ModelsReports\ReEmpleados.cs" />
+    <Compile Include="Models\ComentariosEmpleados.cs" />
     <Compile Include="Models\ComentariosProyectos.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\EmpleadoXProyecto.cs" />

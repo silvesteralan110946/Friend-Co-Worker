@@ -21,6 +21,9 @@ import { NuevoProyectoComponent } from './components/proyecto/nuevo-proyecto/nue
 import { ListaProyectosComponent } from './components/empleado/lista-proyectos/lista-proyectos.component';
 import { CalificacionesComponent } from './components/proyecto/calificaciones/calificaciones.component';
 import { ChartsModule } from 'ng2-charts';
+import { CalificacionesEmpleadoComponent } from './components/empleado/calificaciones-empleado/calificaciones-empleado.component';
+import { TerminosComponent } from './components/inicio/terminos/terminos.component';
+import { PreguntasFrecuentesComponent } from './components/inicio/preguntas-frecuentes/preguntas-frecuentes.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { ChartsModule } from 'ng2-charts';
     ProyectoComponent,
     NuevoProyectoComponent,
     ListaProyectosComponent,
-    CalificacionesComponent
+    CalificacionesComponent,
+    CalificacionesEmpleadoComponent,
+    TerminosComponent,
+    PreguntasFrecuentesComponent
   ],
   imports: [
     BrowserModule,
