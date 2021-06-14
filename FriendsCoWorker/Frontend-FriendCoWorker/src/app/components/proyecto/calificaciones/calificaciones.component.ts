@@ -59,7 +59,7 @@ export class CalificacionesComponent implements OnInit {
 
   guardarId() {
     this.verSeleccion = this.id_proyecto;
-    //console.log(this.id_proyecto);
+    console.log(this.id_proyecto);
     this.getPromedios();
   }
 
@@ -83,7 +83,7 @@ export class CalificacionesComponent implements OnInit {
   }
 
   getComentarios(){
-    this.cometariosProyecto.getProyectosEmpleado(this.id_proyecto).subscribe(
+    this.cometariosProyecto.getComentariosProyecto(this.id_proyecto).subscribe(
       data => {
         console.log(data);
         this.comentariosProyectos = data;

@@ -1,0 +1,100 @@
+<app-navbar></app-navbar>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<div class="container text-center">
+
+  <div class="row">
+    <div class="titulo col-7 offset-1 mt-5">
+      <form class="">
+        <select class="form-control" [(ngModel)]="legajo_traer" id="idproyecto" name="idproyecto" required
+          (change)="guardarId()">
+          <option *ngFor="let empleados of listEmpleados" value={{empleados.Legajo}}>{{ empleados.Nombre + ' ' + empleados.Apellido }}
+          </option>
+        </select>
+      </form>
+
+    </div>
+    <button class="btn bt-small btn-primary col-3 ml-3 mt-5" (click)="charUpdate()">ACEPTAR</button>
+  </div>
+</div>
+
+<section id="tabs" class="project-tab" *ngIf="this.validar != false">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 mb-2">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <button class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+              aria-controls="nav-home" aria-selected="true" (click)="cambiarGrafico()"
+              style="background: white;">Gráfico</button>
+            <button class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false" (click)="cambiarComentario()"
+              style="background: white;">Comentarios</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container">
+  <div class="col-12" *ngIf="this.graficos != false">
+    <div>
+      <div style="display: block;">
+        <canvas baseChart [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
+          [chartType]="radarChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="comentarios d-flex justify-content-center mt-5" *ngIf="this.comentarios != false">
+  <div class="col-8 justify-content-center">
+    <div class="todoscometarios">
+
+
+      <textarea class="textarea" id="cometario" [(ngModel)]="comentario" rows="3"
+        placeholder="Escriba su comentario"></textarea>
+      <button class="btn" (click)="agregarComentario()">COMENTAR</button>
+
+
+      <div *ngFor="let cometario of listComentarios">
+        <div class="media">
+          <img [src]="cometario.foto_perfil" width="64" height="64" alt="">
+          <div class="media-body">
+            <p class="nombre"><strong>{{cometario.nombre}}</strong></p>
+            <div class="container">
+              <div class="row">
+                <p class="comentario col-12">{{cometario.comentario}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card mb-3 card-novisible" *ngIf="this.validar == false">
+    <div class="card-body">
+      <p class="card-text text-center parrafo"><strong>Seleccione un empleado en el combo para ver sus
+          estadísticas!</strong></p>
+      <!-- <p class="card-text text-center" style="font-size: 20px;">Sumate a uno ahora!!</p>
+    <button class="btn btn-primary text-center botonSumar" style="margin: 0 auto;"
+      (click)="redireccion()">Sumarme!</button> -->
+    </div>
+    <div style="text-align: center;">
+      <img class="imagen mt-3" src="../../../../assets/images/meeting-clipart-animation-3.gif" alt="develop">
+    </div>
+
+  </div>
+</div>

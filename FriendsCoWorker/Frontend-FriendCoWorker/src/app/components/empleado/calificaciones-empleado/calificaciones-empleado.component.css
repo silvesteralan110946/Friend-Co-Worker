@@ -1,0 +1,110 @@
+.comentarios {
+  margin: 20px o;
+}
+
+
+.textarea {
+  width: 100%;
+  height: 84px;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 84px;
+  max-width: 300px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  line-height: 30px;
+  border: 1px solid #1493cc;
+  margin-bottom: 20px;
+}
+
+.parrafo{
+  color: #1493cc;
+}
+
+.btn {
+  background: #1493cc;
+  font-family: "Roboto", sans-serif;
+  border-radius: 0;
+  color: white;
+  margin-bottom: 20px;
+}
+.btn:hover {
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 35);
+}
+
+.media {
+  border-top: 1px solid #bfbfbf;
+  padding-top: 20px;
+}
+
+img{
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
+.nombre{
+  color: #1493cc;
+  margin-bottom: 0;
+}
+
+.comentarios{
+  margin-top: 10px;
+  color: black;
+}
+
+.card-novisible{
+  border-radius: 30px;
+  border: 0;
+}
+
+.parrafo{
+  font-size: 20px;
+}
+
+@media (min-width: 300px) and (max-width: 500px){
+  .imagen{
+    width: 450px;
+  }
+}
+
+/*////////////////////////////////////////////////////////*/
+
+.project-tab {
+  padding-top: 10%;
+  margin-top: -8%;
+}
+.project-tab #tabs{
+  background: #007b5e;
+  color: #eee;
+}
+.project-tab #tabs h6.section-title{
+  color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs {
+  color: #1493cc;
+  background-color: transparent;
+  border-color: transparent transparent #f3f3f3;
+  border-bottom: 3px solid !important;
+  font-size: 16px;
+  font-weight: bold;
+}
+.project-tab .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  color: #1493cc;
+  font-size: 16px;
+  font-weight: 600;
+}
+.project-tab .nav-link:hover {
+  border: none;
+}
+.project-tab thead{
+  background: #f3f3f3;
+  color: #333;
+}
+.project-tab a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}

@@ -25,12 +25,12 @@ export class CometariosProyectosService {
   }
 
   // Traer comentarios
-  getProyectosEmpleados(): Observable<ReComentarioProyecto[]> {
+  getComentariosProyectos(): Observable<ReComentarioProyecto[]> {
     return this.http.get<ReComentarioProyecto[]>(urlReport, httpOptions);
   }
 
   // Traer comentarios por ID
-  getProyectosEmpleado(id_proyecto: number): Observable<ReComentarioProyecto[]> {
+  getComentariosProyecto(id_proyecto: number): Observable<ReComentarioProyecto[]> {
     return this.http.get<ReComentarioProyecto[]>(urlReport + id_proyecto, httpOptions);
   }
 }

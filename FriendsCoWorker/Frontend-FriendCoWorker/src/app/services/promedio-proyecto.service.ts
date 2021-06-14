@@ -20,7 +20,7 @@ export class PromedioProyectoService {
 
   constructor(private http: HttpClient, private tokenService: TokenStorageService) { }
 
-  // Traer empleados
+  // Traer proyectos
   getPromedios(): Observable<PromedioProyecto[]> {
     return this.http.get<PromedioProyecto[]>(url, httpOptions);
   }
