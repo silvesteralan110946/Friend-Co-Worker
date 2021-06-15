@@ -1,0 +1,45 @@
+.terminos{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h1{
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-left: 50px;
+  color: #1493cc;
+}
+h2{
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-left: 50px;
+  color: #1493cc;
+}
+p{
+  text-indent: 30px;
+  font-size: 17px;
+  line-height : 25px;
+}
+ul{
+  font-size: 17px;
+  list-style-type: square;
+}
+li{
+  color: #1493cc;
+}
+li span{
+  color: black;
+}
+
+.imagen{
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+button{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}

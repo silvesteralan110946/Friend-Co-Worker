@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'empleado', component: EmpleadoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'inicio', component: InicioComponent, canActivate: [GuardService] },
-  { path: 'terminos', component: TerminosComponent, canActivate: [GuardService] },
+  { path: 'terminos', component: TerminosComponent },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent, canActivate: [GuardService] },
   { path: 'proyecto', component: ProyectoComponent, canActivate: [GuardService] },
   { path: 'nuevo-proyecto', component: NuevoProyectoComponent, canActivate: [GuardService] },

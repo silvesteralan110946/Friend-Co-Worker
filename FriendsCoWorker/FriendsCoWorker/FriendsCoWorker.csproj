@@ -150,6 +150,7 @@
     <Compile Include="AccesoDatos\GestorLogin.cs" />
     <Compile Include="AccesoDatos\GestorPPL.cs" />
     <Compile Include="AccesoDatos\GestorProyecto.cs" />
+    <Compile Include="AccesoDatos\GestorReportes.cs" />
     <Compile Include="AccesoDatos\GestorReportesPromedios.cs" />
     <Compile Include="AccesoDatos\GestorValidarPassword.cs" />
     <Compile Include="AccesoDatos\GestorValorarEmpleado.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="Controllers\ReComentarioEmpleadoController.cs" />
     <Compile Include="Controllers\ReComentarioProyectoController.cs" />
     <Compile Include="Controllers\ReporteEmpleadosController.cs" />
+    <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\TipoDniController.cs" />
     <Compile Include="Controllers\TipoEmpleadoController.cs" />
     <Compile Include="Controllers\TokenGenerator.cs" />

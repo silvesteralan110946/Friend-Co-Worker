@@ -4,6 +4,7 @@ import { ObtenerProyectoEmpleadoService } from 'src/app/services/obtener-proyect
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { ProyectosEmpleado } from 'src/app/Models/obtener-empleado-proyecto.model';
 import swal from 'sweetalert2';
+import { ReportesService } from 'src/app/services/reportes.service';
 
 @Component({
   selector: 'app-lista-proyectos',
@@ -14,9 +15,11 @@ export class ListaProyectosComponent implements OnInit {
 
   idEmpleado: number;
   validar: number;
+  cantidadProyectos: number;
   public proyectoEmpleado: ProyectosEmpleado[];
 
-  constructor(private tokenStorage: TokenStorageService, private router: Router, private obtenerProyectos: ObtenerProyectoEmpleadoService) { }
+  constructor(private tokenStorage: TokenStorageService, private router: Router, private obtenerProyectos: ObtenerProyectoEmpleadoService,
+    private reporteServices: ReportesService) { }
 
   ngOnInit(): void {
     this.idEmpleado = this.tokenStorage.getIdEmpleado();
@@ -27,6 +30,13 @@ export class ListaProyectosComponent implements OnInit {
         this.proyectoEmpleado = data;
         this.validar = this.proyectoEmpleado.length;
         console.log("validar " + this.validar);
+      }
+    )
+
+    this.reporteServices.getCantidadProyectos().subscribe(
+      data => {
+        this.cantidadProyectos = data;
+        console.log();
       }
     )
   }

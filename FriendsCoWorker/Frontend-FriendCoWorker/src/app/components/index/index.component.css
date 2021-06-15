@@ -22,6 +22,14 @@ body {
   position: fixed;
 }
 
+.terminos{
+  color: rgb(189, 177, 177);
+}
+
+.terminos:hover{
+  color: #1493cc;
+}
+
 /*resolucion pantallas grandes*/
 @media (min-width: 992px) {
   /*CONTENEDORES DEL CONTENIDO Y DEL LOGIN Y REGISTRO*/
