@@ -1,0 +1,48 @@
+h1 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #1493cc;
+}
+
+.card{
+  border: 0;
+}
+
+.card-header{
+  background-color: #e0eff7;
+}
+
+.card-header2 {
+  background-color: white;
+  border: 0;
+}
+
+.collapsed{
+  color: black;
+  font-weight: 500;
+}
+
+.card-body{
+  text-indent: 20px;
+  font-size: 16px;
+  line-height : 30px;
+}
+
+.btn[aria-expanded="true"]{
+  color: #0377ad;
+  font-weight: 500;
+}
+
+.img-haeder {
+  display: flex;
+  margin: 0 auto;
+  width: 300px;
+  height: 250px;
+}
+
+@media (min-width: 300px) and (max-width: 500px){
+  .img-haeder {
+    width: 200px;
+    height: 150px;
+  }
+}

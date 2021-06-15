@@ -1,7 +1,6 @@
 body {
   /* font-family: "Poppins", sans-serif; */
   font-family: "Noto Sans JP", sans-serif;
-  height: 100vh;
   /*background-color: #EB5600;*/
   background: #2980b9; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -83,6 +82,16 @@ var {
   height: 500px;
 }
 
+h1{
+  font-size: 32px;
+  font-weight: 400;
+  color: #0f86bd;
+}
+
+.card{
+  border-radius: 15px;
+}
+
 .imgMockup{
   width: 100%;
   margin-top: 15px;
@@ -96,5 +105,9 @@ var {
   .imagen{
     width: 300px;
     height: 300px;
+  }
+
+  body{
+    height: 100%;
   }
 }

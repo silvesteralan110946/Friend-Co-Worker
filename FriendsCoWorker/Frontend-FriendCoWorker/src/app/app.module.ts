@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 // Angular Material
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -52,7 +53,8 @@ import { PreguntasFrecuentesComponent } from './components/inicio/preguntas-frec
     HttpClientModule,
     MatFormFieldModule,
     MatSidenavModule,
-    ChartsModule
+    ChartsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

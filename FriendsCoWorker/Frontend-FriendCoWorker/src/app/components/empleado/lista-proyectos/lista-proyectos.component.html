@@ -11,8 +11,7 @@
 
     <div class="card mb-3 card-novisible" *ngIf="this.validar == 0">
       <div style="text-align: center;">
-        <img class="imagen" src="../../../../assets/images/nuevaList.gif"
-          alt="develop">
+        <img class="imagen" src="../../../../assets/images/nuevaList.gif" alt="develop">
       </div>
       <div class="card-body">
         <p class="card-text text-center parrafo"><strong>No te encuentras en ningún proyecto todavía.</strong></p>
@@ -22,13 +21,18 @@
       </div>
     </div>
 
+    <div class="mb-5 text-center d-flex justify-content-center" *ngIf="this.validar != 0">
+      <div class="card">
+        <h1 class="mt-3 ml-3 mr-3">Cantidad de proyectos en los que te has sumado: " {{cantidadProyectos}} "</h1>
+      </div>
+    </div>
     <div *ngFor="let proyecto of proyectoEmpleado">
 
 
       <div class="row">
         <!-- <div *ngIf="proyecto.legajo == idEmpleado"> -->
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4" ><img [src]="proyecto.img_mockup" class="imgMockup"></div>
-        <div class="card col-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4"><img [src]="proyecto.img_mockup" class="imgMockup"></div>
+        <div class="card col-12 col-sm-12 col-md-8 col-lg-8 mb-5">
           <table class="table table-hover shopping-cart-wrap">
             <thead class="text-muted">
               <tr>
