@@ -84,17 +84,20 @@
 </div>
 
 <div class="container">
-  <div class="card mb-3 card-novisible" *ngIf="this.validar == false">
-    <div class="card-body">
-      <p class="card-text text-center parrafo"><strong>Seleccione un proyecto en el combo para ver sus
-          estadísticas!</strong></p>
-      <!-- <p class="card-text text-center" style="font-size: 20px;">Sumate a uno ahora!!</p>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3 card-novisible" *ngIf="this.validar == false">
+        <div class="card-body">
+          <p class="card-text text-center parrafo"><strong>Seleccione un proyecto en el combo para ver sus
+              estadísticas!</strong></p>
+          <!-- <p class="card-text text-center" style="font-size: 20px;">Sumate a uno ahora!!</p>
     <button class="btn btn-primary text-center botonSumar" style="margin: 0 auto;"
       (click)="redireccion()">Sumarme!</button> -->
+        </div>
+        <div style="text-align: center;">
+          <img class="imagen" src="../../../../assets/images/califProyect.gif" alt="develop" style="max-width: 100%;">
+        </div>
+      </div>
     </div>
-    <div style="text-align: center;">
-      <img class="imagen" src="../../../../assets/images/califProyect.gif" alt="develop">
-    </div>
-
   </div>
 </div>
