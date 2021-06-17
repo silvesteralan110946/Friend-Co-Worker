@@ -130,7 +130,7 @@ namespace FriendsCoWorker.AccesoDatos
             string contraseña = "familycoworker123";
 
             MailMessage oMailMessage = new MailMessage(emailOrigen, emailOrigen, "Consultas Generales",
-                "<p><strong>Cliente: " + envioMail.nombre + "</strong><p><br>" +
+                "<p><strong>Cliente: " + envioMail.nombre + "</strong><p>" +
                 "<p>Telefono: " + envioMail.telefono + "<p><br>" +
                 "<p>"+ envioMail.detalleMensaje + " <p><br>");
 
