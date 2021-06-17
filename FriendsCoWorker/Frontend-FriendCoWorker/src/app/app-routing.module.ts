@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CalificacionesComponent } from './components/proyecto/calificaciones/calificaciones.component';
 import { NuevoProyectoComponent } from './components/proyecto/nuevo-proyecto/nuevo-proyecto.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 import { GuardService } from './services/guard.service';
 
 const routes: Routes = [
@@ -19,8 +20,8 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'empleado', component: EmpleadoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'inicio', component: InicioComponent, canActivate: [GuardService] },
   { path: 'terminos', component: TerminosComponent },
+  { path: 'inicio', component: InicioComponent, canActivate: [GuardService] },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent, canActivate: [GuardService] },
   { path: 'proyecto', component: ProyectoComponent, canActivate: [GuardService] },
   { path: 'nuevo-proyecto', component: NuevoProyectoComponent, canActivate: [GuardService] },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'list-proyecto', component: ListaProyectosComponent, canActivate: [GuardService] },
   { path: 'calificaciones', component: CalificacionesComponent, canActivate: [GuardService] },
   { path: 'calificaciones-empleado', component: CalificacionesEmpleadoComponent, canActivate: [GuardService] },
+  { path: 'reportes', component: ReportesComponent, canActivate: [GuardService] },
   { path: '**', component: InicioComponent, canActivate: [GuardService] },
 ];
 

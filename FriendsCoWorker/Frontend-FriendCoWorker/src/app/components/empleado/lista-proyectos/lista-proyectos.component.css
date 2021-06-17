@@ -1,5 +1,6 @@
 body {
   /* font-family: "Poppins", sans-serif; */
+  height: 100%;
   font-family: "Noto Sans JP", sans-serif;
   /*background-color: #EB5600;*/
   background: #2980b9; /* fallback for old browsers */

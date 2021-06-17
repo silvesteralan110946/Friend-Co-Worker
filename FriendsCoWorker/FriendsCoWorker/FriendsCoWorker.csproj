@@ -184,12 +184,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelsReports\EnvioMail.cs" />
     <Compile Include="ModelsReports\PromedioEmpleado.cs" />
     <Compile Include="ModelsReports\ReComentarioEmpleado.cs" />
     <Compile Include="ModelsReports\ReComentarioProyecto.cs" />
     <Compile Include="ModelsReports\ListProyectoEmpleado.cs" />
     <Compile Include="ModelsReports\PromedioProyecto.cs" />
     <Compile Include="ModelsReports\ReEmpleados.cs" />
+    <Compile Include="ModelsReports\ReEmplProyecto.cs" />
+    <Compile Include="ModelsReports\TopEmpleados.cs" />
+    <Compile Include="ModelsReports\TopProyectos.cs" />
     <Compile Include="Models\ComentariosEmpleados.cs" />
     <Compile Include="Models\ComentariosProyectos.cs" />
     <Compile Include="Models\Empleado.cs" />
