@@ -25,6 +25,10 @@ import { ChartsModule } from 'ng2-charts';
 import { CalificacionesEmpleadoComponent } from './components/empleado/calificaciones-empleado/calificaciones-empleado.component';
 import { TerminosComponent } from './components/inicio/terminos/terminos.component';
 import { PreguntasFrecuentesComponent } from './components/inicio/preguntas-frecuentes/preguntas-frecuentes.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { EmpleadoProyectoComponent } from './components/reportes/empleado-proyecto/empleado-proyecto.component';
+import { TopProyectosComponent } from './components/reportes/top-proyectos/top-proyectos.component';
+import { TopEmpleadosComponent } from './components/reportes/top-empleados/top-empleados.component';
 
 
 @NgModule({
@@ -42,7 +46,11 @@ import { PreguntasFrecuentesComponent } from './components/inicio/preguntas-frec
     CalificacionesComponent,
     CalificacionesEmpleadoComponent,
     TerminosComponent,
-    PreguntasFrecuentesComponent
+    PreguntasFrecuentesComponent,
+    ReportesComponent,
+    EmpleadoProyectoComponent,
+    TopProyectosComponent,
+    TopEmpleadosComponent
   ],
   imports: [
     BrowserModule,

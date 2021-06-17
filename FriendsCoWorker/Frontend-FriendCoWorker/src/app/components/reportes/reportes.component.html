@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<section id="tabs" class="project-tab">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 mb-2">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <button class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+              aria-controls="nav-home" aria-selected="true" style="background: white;" (click)="empXpro()">Empleados por proyecto</button>
+            <button class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false" style="background: white;" (click)="topProyectos()">Top 3 proyectos</button>
+            <button class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false" style="background: white;" (click)="topEmpleados()">Top 3 empleados</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Empleados por proyecto -->
+<div class="container">
+  <div *ngIf="validarEmp != false">
+    <app-empleado-proyecto></app-empleado-proyecto>
+  </div>
+
+  <!-- Top 3 mejores proyectos -->
+  <div *ngIf="topProyecto != false">
+    <app-top-proyectos></app-top-proyectos>
+  </div>
+
+  <!-- Top 3 mejores empleados -->
+  <div *ngIf="topEmpleado != false">
+    <app-top-empleados></app-top-empleados>
+  </div>
+</div>

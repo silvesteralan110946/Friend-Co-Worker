@@ -1,0 +1,21 @@
+<div class="container mt-3" *ngIf="validar != true ">
+  <div class="row text-center">
+    <h1 class="col-4 text-center h1">VER TOP 3 DE EMPLEADOS!!</h1>
+    <div class="col-1">
+      <button class="btn btn-primary btnAceptar" (click)="charUpdate()">VAMOS</button>
+    </div>
+  </div>
+  <div class="col-12">
+    <img class="imagenPodio" src="../../../../assets/images/Developer.gif" alt="">
+  </div>
+</div>
+
+<div *ngIf="validar == true " class="mt-5">
+  <div>
+    <div style="display: block">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+</div>
