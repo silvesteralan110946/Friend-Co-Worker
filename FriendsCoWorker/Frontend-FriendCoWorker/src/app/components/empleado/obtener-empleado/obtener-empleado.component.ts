@@ -68,21 +68,31 @@ export class ObtenerEmpleadoComponent implements OnInit {
 
 
   agregarValorEmpleado() {
-    if(this.idEmpleado != this.legajo){
-    let selectedVotacion: ValoresEmpleadoInterface = new ValoresEmpleadoInterface(this.legajo, this.Comunicacion, this.desempenio_individual,
-      this.trabajoEquipo, this.puntualidad, this.resolucion_de_problemas, this.idEmpleado);
-    this.valoresEmpleadoServices.onCreateValorarEmpleado(selectedVotacion).subscribe(
-      data => {
-        if (data == 1) {
-          Swal.fire('Error', 'Ya valoraste este empleado', 'error');
-        } else {
-          Swal.fire('Enviado', 'Valor sumado con exito', 'success');
-        }
-        console.log(data);
+    if (this.idEmpleado != this.legajo) {
+      let selectedVotacion: ValoresEmpleadoInterface = new ValoresEmpleadoInterface(this.legajo, this.Comunicacion, this.desempenio_individual,
+        this.trabajoEquipo, this.puntualidad, this.resolucion_de_problemas, this.idEmpleado);
+      if (this.Comunicacion != undefined || this.desempenio_individual != undefined || this.trabajoEquipo != undefined || this.puntualidad != undefined || this.resolucion_de_problemas != undefined) {
+        this.valoresEmpleadoServices.onCreateValorarEmpleado(selectedVotacion).subscribe(
+          data => {
+            if (data == 1) {
+              Swal.fire('Error', 'Ya valoraste este empleado', 'error');
+              this.refresh();
+            } else {
+              Swal.fire('Enviado', 'Valor sumado con exito', 'success');
+              this.refresh();
+            }
+            console.log(data);
+          }
+        )
+      } else {
+        Swal.fire('Error', 'Tiene que votar todas las opciones', 'info')
       }
-    )
-    }else{
+    } else {
       Swal.fire('Error', 'No puedes valorarte tu mismo', 'error');
     }
+  }
+
+  refresh(): void {
+    window.setTimeout(function(){location.reload()},1500)
   }
 }

@@ -129,16 +129,23 @@ export class ProyectoComponent implements OnInit {
   agregarValorProyecto() {
     let selectedVotacion: ValoresProyectoInterface = new ValoresProyectoInterface(this.idproyecto, this.funcionalidad, this.documentacion,
       this.diseño, this.retro, this.tiempo, this.idEmpleado);
-    this.valoresServices.onCreateValorarProyecto(selectedVotacion).subscribe(
-      data => {
-        if (data == 1) {
-          Swal.fire('Error', 'Ya valoraste este proyecto', 'error');
-        } else {
-          Swal.fire('Enviado', 'Valor sumado con exito', 'success');
+
+    if (this.funcionalidad != null || this.documentacion != null || this.diseño != null || this.retro != null || this.tiempo != null) {
+      this.valoresServices.onCreateValorarProyecto(selectedVotacion).subscribe(
+        data => {
+          if (data == 1) {
+            Swal.fire('Error', 'Ya valoraste este proyecto', 'error');
+            this.refresh();
+          } else {
+            Swal.fire('Enviado', 'Valor sumado con exito', 'success');
+            this.refresh();
+          }
+          //console.log(data);
         }
-        console.log(data);
-      }
-    )
+      )
+    } else {
+      Swal.fire('Error', 'Tiene que votar todas las opciones', 'info')
+    }
   }
 
   agregarComentario() {
@@ -148,5 +155,9 @@ export class ProyectoComponent implements OnInit {
         Swal.fire('Enviado', 'Comentario sumado con exito', 'success');
       }
     )
+  }
+
+  refresh(): void {
+    window.setTimeout(function(){location.reload()},2000)
   }
 }

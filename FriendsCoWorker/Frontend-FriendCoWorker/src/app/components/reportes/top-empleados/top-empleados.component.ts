@@ -17,9 +17,13 @@ export class TopEmpleadosComponent implements OnInit {
   top1: string = '';
   top2: string = '';
   top3: string = '';
+  top4: string = '';
+  top5: string = '';
   promedio1: number = 0;
   promedio2: number = 0;
   promedio3: number = 0;
+  promedio4: number = 0;
+  promedio5: number = 0;
   validar: boolean = false;
 
   listTopEmpleados: TopEmpleados[];
@@ -28,22 +32,33 @@ export class TopEmpleadosComponent implements OnInit {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
     scales: {
-      xAxes: [{}], yAxes: [{
+      xAxes: [{
+        ticks: {
+          fontSize: 17
+        }
+      }], yAxes: [{
         display: true,
         ticks: {
           suggestedMin: 0,
           suggestedMax: 250,
+          fontSize: 15
         }
       }]
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontSize:15,
+      }
     },
     plugins: {
       datalabels: {
         anchor: 'end',
-        align: 'end',
-      }
+        align: 'end'
+      },
     }
   };
-  public barChartLabels: Label[] = ['TOP EMPLEADOS'];
+  public barChartLabels: Label[] = ['TOP EMPLEADOS MÁS VOTADOS'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
@@ -51,7 +66,9 @@ export class TopEmpleadosComponent implements OnInit {
   public barChartData = [
     { data: [this.promedio1], label: this.top1 },
     { data: [this.promedio2], label: this.top2 },
-    { data: [this.promedio3], label: this.top3 }
+    { data: [this.promedio3], label: this.top3 },
+    { data: [this.promedio4], label: this.top4 },
+    { data: [this.promedio5], label: this.top5 }
   ];
 
   constructor(private tokenStorage: TokenStorageService, private router: Router, private reporteServices: ReportesService) { }
@@ -69,15 +86,18 @@ export class TopEmpleadosComponent implements OnInit {
           if (index == 0) {
             this.top1 = this.listTopEmpleados[index].nombre_empleado;
             this.promedio1 = this.listTopEmpleados[index].promedio;
-            console.log(this.promedio1)
           } else if (index == 1) {
             this.top2 = this.listTopEmpleados[index].nombre_empleado;
             this.promedio2 = this.listTopEmpleados[index].promedio;
-            console.log(this.promedio2)
           } else if (index == 2) {
             this.top3 = this.listTopEmpleados[index].nombre_empleado;
             this.promedio3 = this.listTopEmpleados[index].promedio;
-            console.log(this.promedio3)
+          } else if (index == 3) {
+            this.top4 = this.listTopEmpleados[index].nombre_empleado;
+            this.promedio4 = this.listTopEmpleados[index].promedio;
+          } else if (index == 4) {
+            this.top5 = this.listTopEmpleados[index].nombre_empleado;
+            this.promedio5 = this.listTopEmpleados[index].promedio;
           }
         }
       }
@@ -87,8 +107,10 @@ export class TopEmpleadosComponent implements OnInit {
   public charUpdate() {
     this.barChartData = [
       { data: [this.promedio1], label: '1° ' + this.top1 },
-      { data: [this.promedio2], label: '2° ' +this.top2 },
-      { data: [this.promedio3], label: '3° ' +this.top3 }
+      { data: [this.promedio2], label: '2° ' + this.top2 },
+      { data: [this.promedio3], label: '3° ' + this.top3 },
+      { data: [this.promedio4], label: '4° ' + this.top4 },
+      { data: [this.promedio5], label: '5° ' + this.top5 }
     ];
     this.validar = true;
   }
