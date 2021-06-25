@@ -58,5 +58,36 @@ namespace FriendsCoWorker.Controllers
             GestorReportes gEmail = new GestorReportes();
             gEmail.enviarEmailCuenta(envioMail);
         }
+
+        //[HttpPost]
+        //[Route("api/Reportes/ValidarMail/")]
+        //public IHttpActionResult validation(EnvioMail mail)
+        //{
+        //    if (mail == null)
+        //        throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+        //    GestorValidarPassword gVPassword = new GestorValidarPassword();
+
+        //    bool isCredentialValid = gVPassword.validarEmail(mail);
+
+        //    if (isCredentialValid)
+        //    {
+        //        string tokenCambioPassword = Guid.NewGuid().ToString();
+
+        //        //insertar el token en el cliente
+        //        gVPassword.insertarTokenEmail(tokenCambioPassword, mail.email);
+
+        //        // enviar el mail
+
+        //        gVPassword.SendMail(mail.email, tokenCambioPassword);
+
+        //        var email = mail.email;
+        //        return Ok(email);
+        //    }
+        //    else
+        //    {
+        //        return Unauthorized();
+        //    }
+        //}
     }
 }

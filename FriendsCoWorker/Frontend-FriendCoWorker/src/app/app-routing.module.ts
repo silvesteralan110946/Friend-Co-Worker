@@ -20,6 +20,8 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'empleado', component: EmpleadoComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'recuperar-mail', component: LoginComponent },
+  { path: 'recuperar-contrasenia', component: LoginComponent },
   { path: 'terminos', component: TerminosComponent },
   { path: 'inicio', component: InicioComponent, canActivate: [GuardService] },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent, canActivate: [GuardService] },

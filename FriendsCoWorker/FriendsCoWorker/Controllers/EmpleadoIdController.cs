@@ -8,7 +8,7 @@ using System.Web.Http.Cors;
 using FriendsCoWorker.Models;
 using FriendsCoWorker.AccesoDatos;
 
-namespace clip_money.Controllers
+namespace FriendsCoWorker.Controllers
 {
     //[Authorize]
     [AllowAnonymous]
@@ -37,10 +37,11 @@ namespace clip_money.Controllers
 
         // POST: api/Empleado
         [HttpPost]
-        public int Post([FromBody] Empleado nuevo)
+        [Route("api/nuevoEmpleado/")]
+        public int Post([FromBody] EmpleadoNuevo nuevo)
         {            
             GestorEmpleado gEmpleado = new GestorEmpleado();
-            return gEmpleado.nuevoEmpleado(nuevo);
+            return gEmpleado.nuevoEmpleado2(nuevo);
         }
     }
 }

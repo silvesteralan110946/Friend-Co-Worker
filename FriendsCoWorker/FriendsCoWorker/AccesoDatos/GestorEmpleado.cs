@@ -82,6 +82,75 @@ namespace FriendsCoWorker.AccesoDatos
             }
         }
 
+        // CREAR NUEVO EMPLEADO - CUENTA
+        public int nuevoEmpleado2(EmpleadoNuevo nuevo)
+        {
+            GestorValidarPassword gvPassword = new GestorValidarPassword();
+
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+            int mensaje = 0;
+
+            // Verificar que mail, dni o usuario no existan en la Base de datos
+
+            try
+            {
+                if (existeDni(nuevo.NumeroDocumento) == true)
+                {
+                    mensaje = 1;
+                    return mensaje;
+                }
+                else if (existeEmail(nuevo.Email) == true)
+                {
+                    mensaje = 2;
+                    return mensaje;
+                }
+                else if (existeUsuario(nuevo.NombreUsuario) == true)
+                {
+                    mensaje = 3;
+                    return mensaje;
+                }
+                // Si no existe, agrega empleado
+                else
+                {
+                    using (SqlConnection conn = new SqlConnection(StrConn))
+                    {
+                        conn.Open();
+
+                        SqlCommand comm = conn.CreateCommand();
+
+                        //Encriptar contraseña
+                        string encriptarContraseña = gvPassword.GetSha256(nuevo.Password);
+
+                        comm.CommandText = "nuevoEmpleado";
+                        comm.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        comm.Parameters.Add(new SqlParameter("@nombre", nuevo.Nombre));
+                        comm.Parameters.Add(new SqlParameter("@apellido", nuevo.Apellido));
+                        comm.Parameters.Add(new SqlParameter("@sexo", nuevo.Sexo));
+                        comm.Parameters.Add(new SqlParameter("@idTipoDocumento", nuevo.IdTipoDocumento));
+                        comm.Parameters.Add(new SqlParameter("@num_dni", nuevo.NumeroDocumento));
+                        comm.Parameters.Add(new SqlParameter("@fotoPerfil", nuevo.FotoPerfil));
+                        comm.Parameters.Add(new SqlParameter("@fecha_nacimiento", nuevo.FechaNacimiento));
+                        comm.Parameters.Add(new SqlParameter("@id_localidad", nuevo.IdLocalidad));
+                        comm.Parameters.Add(new SqlParameter("@domicilio", nuevo.Domicilio));
+                        comm.Parameters.Add(new SqlParameter("@telefono", nuevo.Telefono));
+                        comm.Parameters.Add(new SqlParameter("@email", nuevo.Email));
+                        comm.Parameters.Add(new SqlParameter("@idTipoEmpleado", nuevo.IdTipoEmpleado));
+                        comm.Parameters.Add(new SqlParameter("@nombre_usuario", nuevo.NombreUsuario));
+                        comm.Parameters.Add(new SqlParameter("@password", encriptarContraseña));
+
+                    comm.ExecuteNonQuery();
+
+                        //enviarEmailCuenta(nuevo.Email, nuevo.NombreUsuario);
+                        return mensaje;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         // OBTENER EMPLEADOS
         public List<Empleado> ObtenerEmpleados()

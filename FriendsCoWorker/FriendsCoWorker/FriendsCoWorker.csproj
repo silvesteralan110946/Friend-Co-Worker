@@ -197,6 +197,7 @@
     <Compile Include="Models\ComentariosEmpleados.cs" />
     <Compile Include="Models\ComentariosProyectos.cs" />
     <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\EmpleadoNuevo.cs" />
     <Compile Include="Models\EmpleadoXProyecto.cs" />
     <Compile Include="Models\Localidad.cs" />
     <Compile Include="Models\LoginRequest.cs" />

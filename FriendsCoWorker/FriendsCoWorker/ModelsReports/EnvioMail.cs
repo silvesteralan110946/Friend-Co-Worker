@@ -10,5 +10,6 @@ namespace FriendsCoWorker.ModelsReports
         public string nombre { get; set; }
         public string telefono { get; set; }
         public string detalleMensaje { get; set; }
+        public string mail_recuperar_pass { get; set; }
     }
 }
