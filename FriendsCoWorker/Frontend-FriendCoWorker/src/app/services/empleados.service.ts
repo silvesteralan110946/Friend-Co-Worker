@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { TokenStorageService } from './token-storage.service';
 
 const url = 'https://localhost:44393/api/Empleados/';
+const urlNuevo = 'https://localhost:44393/api/nuevoEmpleado/';
 
 const httpOptions =
 {
@@ -26,7 +27,7 @@ export class EmpleadosService {
 
   // Crear empleado
   onCreateEmpleado(empleado: Empleado): Observable<any> {
-    return this.http.post(url, empleado, httpOptions);
+    return this.http.post(urlNuevo, empleado, httpOptions);
   }
 
   // Traer empleados

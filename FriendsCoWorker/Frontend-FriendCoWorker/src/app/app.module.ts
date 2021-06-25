@@ -29,6 +29,8 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 import { EmpleadoProyectoComponent } from './components/reportes/empleado-proyecto/empleado-proyecto.component';
 import { TopProyectosComponent } from './components/reportes/top-proyectos/top-proyectos.component';
 import { TopEmpleadosComponent } from './components/reportes/top-empleados/top-empleados.component';
+import { RecuperarMailComponent } from './components/login/recuperar-mail/recuperar-mail.component';
+import { RecuperarContraseniaComponent } from './components/login/recuperar-contrasenia/recuperar-contrasenia.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { TopEmpleadosComponent } from './components/reportes/top-empleados/top-e
     ReportesComponent,
     EmpleadoProyectoComponent,
     TopProyectosComponent,
-    TopEmpleadosComponent
+    TopEmpleadosComponent,
+    RecuperarMailComponent,
+    RecuperarContraseniaComponent
   ],
   imports: [
     BrowserModule,

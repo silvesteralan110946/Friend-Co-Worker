@@ -144,5 +144,54 @@ namespace FriendsCoWorker.AccesoDatos
 
             osmtpClient.Send(oMailMessage);
         }
+
+        //Metodo para validar que el mail ingresado en el cambio de contraseña exista en la BD
+        public bool validarEmail(EnvioMail email)
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+            bool result = false;
+
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+
+                SqlCommand comm = new SqlCommand();
+                string consultaSql = @"select email
+                                        from Empleados
+                                        where email = @email";
+                comm.Parameters.Clear();
+                comm.Parameters.AddWithValue("@email", email);
+
+                comm.CommandType = System.Data.CommandType.Text;
+                comm.CommandText = consultaSql;
+
+                SqlDataReader reader = comm.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    result = true;
+                }
+            }
+            return result;
+        }
+
+        //Metodo para insertar el token en la tabla empleados, en la columna token_recovery, y que enviaremos al mail de cambio de contraseña
+        public void insertarTokenEmail(string token, string email)
+        {
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+
+                SqlCommand comm = new SqlCommand("insertarTokenEmail", conn);
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+
+                comm.Parameters.Add(new SqlParameter("@email", email));
+                comm.Parameters.Add(new SqlParameter("@token", token));
+
+                SqlDataReader dr = comm.ExecuteReader();
+            }
+        }
     }
 }

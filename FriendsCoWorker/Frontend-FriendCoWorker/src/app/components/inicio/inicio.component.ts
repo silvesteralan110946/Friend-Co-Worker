@@ -29,8 +29,9 @@ export class InicioComponent implements OnInit {
     this.reportes.enviarMail(mail).subscribe(
       data =>{
         console.log(data);
+        this.formMail.reset();
       }
     );
-    Swal.fire('Enhorabuena', 'El mensaje fue enviado exitosamente', 'success');
+    Swal.fire('Enviando...', 'El mensaje fue enviado exitosamente', 'success');
   }
 }
