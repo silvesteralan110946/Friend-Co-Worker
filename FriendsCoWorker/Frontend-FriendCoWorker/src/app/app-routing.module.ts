@@ -9,6 +9,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { PreguntasFrecuentesComponent } from './components/inicio/preguntas-frecuentes/preguntas-frecuentes.component';
 import { TerminosComponent } from './components/inicio/terminos/terminos.component';
 import { LoginComponent } from './components/login/login.component';
+import { RecuperarContraseniaComponent } from './components/login/recuperar-contrasenia/recuperar-contrasenia.component';
+import { RecuperarMailComponent } from './components/login/recuperar-mail/recuperar-mail.component';
 import { CalificacionesComponent } from './components/proyecto/calificaciones/calificaciones.component';
 import { NuevoProyectoComponent } from './components/proyecto/nuevo-proyecto/nuevo-proyecto.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
@@ -20,8 +22,8 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'empleado', component: EmpleadoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'recuperar-mail', component: LoginComponent },
-  { path: 'recuperar-contrasenia', component: LoginComponent },
+  { path: 'recuperar-mail', component: RecuperarMailComponent },
+  { path: 'recoverypassword', component: RecuperarContraseniaComponent },
   { path: 'terminos', component: TerminosComponent },
   { path: 'inicio', component: InicioComponent, canActivate: [GuardService] },
   { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent, canActivate: [GuardService] },

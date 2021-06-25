@@ -417,5 +417,33 @@ namespace FriendsCoWorker.AccesoDatos
             }
             return lista;
         }
+
+        //Método para obtener el usuario a través del email
+        public string obtenerUsuario(string email)
+        {
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+
+            using (SqlConnection conn = new SqlConnection(StrConn))
+            {
+                conn.Open();
+
+                SqlCommand comm = new SqlCommand("obtenerUsuario", conn);
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.Parameters.Add(new SqlParameter("@email", email));
+
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    string nom_usuario;
+                    nom_usuario = dr.GetString(0).Trim();
+
+                    return nom_usuario;
+                }
+                else
+                {
+                    return "DefaultUser";
+                }
+            }
+        }
     }
 }

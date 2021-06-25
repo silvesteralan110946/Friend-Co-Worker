@@ -173,6 +173,8 @@
     <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\ReComentarioEmpleadoController.cs" />
     <Compile Include="Controllers\ReComentarioProyectoController.cs" />
+    <Compile Include="Controllers\RecoveryMailController.cs" />
+    <Compile Include="Controllers\RecoveryPasswordController.cs" />
     <Compile Include="Controllers\ReporteEmpleadosController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\TipoDniController.cs" />
@@ -184,7 +186,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelsReports\EmailValidator.cs" />
     <Compile Include="ModelsReports\EnvioMail.cs" />
+    <Compile Include="ModelsReports\NewPasswordModify.cs" />
     <Compile Include="ModelsReports\PromedioEmpleado.cs" />
     <Compile Include="ModelsReports\ReComentarioEmpleado.cs" />
     <Compile Include="ModelsReports\ReComentarioProyecto.cs" />
@@ -194,6 +198,7 @@
     <Compile Include="ModelsReports\ReEmplProyecto.cs" />
     <Compile Include="ModelsReports\TopEmpleados.cs" />
     <Compile Include="ModelsReports\TopProyectos.cs" />
+    <Compile Include="ModelsReports\ValidarPassword.cs" />
     <Compile Include="Models\ComentariosEmpleados.cs" />
     <Compile Include="Models\ComentariosProyectos.cs" />
     <Compile Include="Models\Empleado.cs" />

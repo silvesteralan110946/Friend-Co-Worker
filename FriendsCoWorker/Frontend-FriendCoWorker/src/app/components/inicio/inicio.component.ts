@@ -33,5 +33,10 @@ export class InicioComponent implements OnInit {
       }
     );
     Swal.fire('Enviando...', 'El mensaje fue enviado exitosamente', 'success');
+    this.refresh();
+  }
+
+  refresh(): void {
+    window.setTimeout(function(){location.reload()},1500)
   }
 }
