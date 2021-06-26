@@ -17,7 +17,7 @@ namespace FriendsCoWorker.Models
         private string fechaNacimiento;
         private int idLocalidad;
         private string domicilio;
-        private int telefono;
+        private long telefono;
         private string email;
         private int idTipoEmpleado;
         private string nombreUsuario;
@@ -34,7 +34,7 @@ namespace FriendsCoWorker.Models
         public string FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public int IdLocalidad { get => idLocalidad; set => idLocalidad = value; }
         public string Domicilio { get => domicilio; set => domicilio = value; }
-        public int Telefono { get => telefono; set => telefono = value; }
+        public long Telefono { get => telefono; set => telefono = value; }
         public string Email { get => email; set => email = value; }
         public int IdTipoEmpleado { get => idTipoEmpleado; set => idTipoEmpleado = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }

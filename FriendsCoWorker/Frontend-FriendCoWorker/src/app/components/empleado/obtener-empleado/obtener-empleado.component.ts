@@ -71,7 +71,7 @@ export class ObtenerEmpleadoComponent implements OnInit {
     if (this.idEmpleado != this.legajo) {
       let selectedVotacion: ValoresEmpleadoInterface = new ValoresEmpleadoInterface(this.legajo, this.Comunicacion, this.desempenio_individual,
         this.trabajoEquipo, this.puntualidad, this.resolucion_de_problemas, this.idEmpleado);
-      if (this.Comunicacion != undefined || this.desempenio_individual != undefined || this.trabajoEquipo != undefined || this.puntualidad != undefined || this.resolucion_de_problemas != undefined) {
+      if (this.Comunicacion != undefined && this.desempenio_individual != undefined && this.trabajoEquipo != undefined && this.puntualidad != undefined && this.resolucion_de_problemas != undefined) {
         this.valoresEmpleadoServices.onCreateValorarEmpleado(selectedVotacion).subscribe(
           data => {
             if (data == 1) {

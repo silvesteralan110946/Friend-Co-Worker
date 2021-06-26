@@ -125,8 +125,8 @@ namespace FriendsCoWorker.AccesoDatos
             string contraseña = "familycoworker123";
 
             MailMessage oMailMessage = new MailMessage(emailOrigen, emailDestino, "Cambio Contraseña",
-                "<p>Para realizar el cambio de contraseña utilize el siguiente token<p><br>" +
-                "<p>Usuario: <p>" + usuario + "<br>" +
+                "<p><strong>Para realizar el cambio de contraseña utilize el siguiente token</strong><p>" +
+                "<p><strong>Usuario: <p>" + usuario + "</strong>" +
                 "<p> TOKEN: <p>" + token); ;
 
             oMailMessage.IsBodyHtml = true;

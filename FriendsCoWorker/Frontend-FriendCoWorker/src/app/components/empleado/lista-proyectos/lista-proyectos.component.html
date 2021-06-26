@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
 ">
 
-<body>
+<body class="body" [ngClass]="{'body100': validar == 0 }">
 
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
@@ -25,7 +25,7 @@
         <p class="card-text text-center parrafo"><strong>No te encuentras en ningún proyecto todavía.</strong></p>
         <p class="card-text text-center" style="font-size: 20px;">Sumate a uno ahora!!</p>
         <button class="btn btn-primary text-center botonSumar" style="margin: 0 auto;"
-          (click)="redireccion()">Sumarme!</button>
+          (click)="redireccion()">SUMARME</button>
       </div>
     </div>
 
