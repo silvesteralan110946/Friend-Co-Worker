@@ -16,8 +16,8 @@
                 </div>
                 <div class=" col-12 col-sm-12 col-md-12 selfie">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12"><p>Foto</p></div>
-                        <div class= "col-12 col-sm-12 col-md-12 col-lg-12">
+                        <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12"><p>Foto</p></div> -->
+                        <div class= "col-12 col-sm-12 col-md-12 col-lg-12 mt-2">
                             <div class="selfie-foto">
                                 <img [src]="fotoUsuario" alt="">
                             </div>
@@ -45,7 +45,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('nombre')?.touched || formEmpleado.get('nombre')?.dirty) && !formEmpleado.get('nombre')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('nombre').errors?.required">
-                      Introduzca su Nombre
+                      Introduzca su nombre
                     </span>
                     <span *ngIf="formEmpleado.get('nombre').errors?.pattern">
                       Debe contener al menos 2 caracteres
@@ -62,7 +62,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('apellido')?.touched || formEmpleado.get('apellido')?.dirty) && !formEmpleado.get('apellido')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('apellido').errors?.required">
-                      Introduzca su Apellido
+                      Introduzca su apellido
                     </span>
                     <span *ngIf="formEmpleado.get('apellido').errors?.pattern">
                       Debe contener al menos 2 caracteres
@@ -96,7 +96,7 @@
                   </select>
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('idTipoDocumento').errors?.required">
-                      Seleccione su tipo de dni
+                      Seleccione su tipo de documento
                     </span>
                   </div>
                 </div>
@@ -109,10 +109,10 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('numDni')?.touched || formEmpleado.get('numDni')?.dirty) && !formEmpleado.get('numDni')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('numDni').errors?.required">
-                      Introduzca su DNI
+                      Introduzca su número de documento
                     </span>
                     <span *ngIf="formEmpleado.get('numDni').errors?.pattern">
-                      Debe contener al menos 7 caracteres Numéricos, sín espacios en blanco
+                      Debe contener al menos 7 caracteres numéricos, sín espacios en blanco
                     </span>
                   </div>
                 </div>
@@ -125,7 +125,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('telefono')?.touched || formEmpleado.get('telefono')?.dirty) && !formEmpleado.get('telefono')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('telefono').errors?.required">
-                      Introduzca su Teléfono
+                      Introduzca su teléfono
                     </span>
                     <span *ngIf="formEmpleado.get('telefono').errors?.pattern">
                       Ingrese los 10 digitos numéricos sin el prefijo
@@ -140,7 +140,7 @@
                     [ngClass]="{ 'is-invalid': formEmpleado.get('fechaNacimiento')?.touched && !formEmpleado.get('fechaNacimiento')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('fechaNacimiento').errors?.required">
-                      Introduzca su Fecha de Nacimiento
+                      Introduzca su fecha de nacimiento
                     </span>
                   </div>
                 </div>
@@ -152,7 +152,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('email')?.touched || formEmpleado.get('email')?.dirty) && !formEmpleado.get('email')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('email').errors?.required">
-                      Introduzca su Email
+                      Introduzca su email
                     </span>
                     <span *ngIf="formEmpleado.get('email').errors?.pattern">
                       Ingrese un formato correcto, ejemplo@ejemplo.com
@@ -220,10 +220,10 @@
 
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('domicilio').errors?.required">
-                      Introduzca su Domicilio
+                      Introduzca su domicilio
                     </span>
                     <span *ngIf="formEmpleado.get('domicilio').errors?.pattern">
-                      Ingresa solo caracters alfanumericos, longitud maxima 50
+                      Ingresa solo caracters alfanuméricos, longitud maxima 50
                     </span>
                   </div>
                 </div>
@@ -252,10 +252,10 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('usuario')?.touched || formEmpleado.get('usuario')?.dirty) && !formEmpleado.get('usuario')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('usuario').errors?.required">
-                      Introduzca un Usuario
+                      Introduzca un usuario
                     </span>
                     <span *ngIf="formEmpleado.get('usuario').errors?.pattern">
-                      Debe contener al menos 5 caracteres Alfanumericos, sin espacios en blanco
+                      Debe contener al menos 5 caracteres Alfanuméricos, sin espacios en blanco
                     </span>
                   </div>
                 </div>
@@ -271,7 +271,7 @@
                       Introduzca un password
                     </span>
                     <span *ngIf="formEmpleado.get('password').errors?.pattern">
-                      Debe contener al menos 8 caracteres alfanumericos y una mayuscula, sin espacios en blanco
+                      Debe contener al menos 8 caracteres alfanuméricos y una mayúscula, sin espacios en blanco
                     </span>
                   </div>
                 </div>
@@ -285,7 +285,7 @@
                       Introduzca un password
                     </span>
                     <span *ngIf="formEmpleado.get('passwordRepeat').errors?.pattern">
-                      Debe contener al menos 8 caracteres alfanumericos y una mayuscula, sin espacios en blanco
+                      Debe contener al menos 8 caracteres alfanuméricos y una mayúscula, sin espacios en blanco
                     </span>
                   </div>
                 </div>

@@ -53,8 +53,8 @@ export class CalificacionesComponent implements OnInit {
         //console.log(this.listProyectos);
       })
 
-      this.idempleado = this.tokenStorage.getIdEmpleado();
-      console.log(this.idempleado);
+    this.idempleado = this.tokenStorage.getIdEmpleado();
+    console.log(this.idempleado);
   }
 
   guardarId() {
@@ -82,7 +82,7 @@ export class CalificacionesComponent implements OnInit {
     )
   }
 
-  getComentarios(){
+  getComentarios() {
     this.cometariosProyecto.getComentariosProyecto(this.id_proyecto).subscribe(
       data => {
         console.log(data);
@@ -91,12 +91,12 @@ export class CalificacionesComponent implements OnInit {
     )
   }
 
-  cambiarGrafico(){
+  cambiarGrafico() {
     this.graficos = true;
     this.comentarios = false;
   }
 
-  cambiarComentario(){
+  cambiarComentario() {
     this.comentarios = true;
     this.graficos = false;
   }
@@ -108,9 +108,19 @@ export class CalificacionesComponent implements OnInit {
       ticks: {
         min: 0,
         max: 5
+      },
+      pointLabels: {
+        fontSize: 13,
+        fontStyle: "bold"
       }
-    }
-
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontSize: 25,
+        fontStyle: "bold"
+      }
+    },
   };
   public radarChartLabels: Label[] = ['Funcionalidad', 'Documentación', 'Diseño', 'Retro-Alimentación', 'Tiempo de entrega'];
 

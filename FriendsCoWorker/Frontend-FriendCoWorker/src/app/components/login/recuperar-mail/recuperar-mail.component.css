@@ -326,6 +326,10 @@ h1 {
   width: 30%;
 }
 
+#btnEnviar:hover {
+  background-color: #157cac;
+}
+
 #btnEnviar:disabled {
   background-color: #a19e9c;
 }
