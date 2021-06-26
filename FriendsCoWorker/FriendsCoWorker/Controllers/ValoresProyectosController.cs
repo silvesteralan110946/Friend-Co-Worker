@@ -36,8 +36,11 @@ namespace FriendsCoWorker.Controllers
         }
 
         // PUT: api/ValoresProyectos/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public int Put([FromBody] ValoresProyecto valor)
         {
+            GestorValoresProyecto gValor = new GestorValoresProyecto();
+            return gValor.modificarValorProyecto(valor);
         }
 
         // DELETE: api/ValoresProyectos/5

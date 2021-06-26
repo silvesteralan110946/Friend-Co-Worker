@@ -83,5 +83,45 @@ namespace FriendsCoWorker.AccesoDatos
                 }
             }
         }
+
+        // MODIFICAR VALORACION
+        public int modificarValorProyecto(ValoresProyecto valor)
+        {
+
+            string StrConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+            int mensaje = 0;
+
+            // Verificar que el empleado no haya votado
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(StrConn))
+                {
+                    conn.Open();
+
+                    SqlCommand comm = conn.CreateCommand();
+
+
+                    comm.CommandText = "modificarValorProyecto";
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    comm.Parameters.Add(new SqlParameter("@id_proyecto", valor.Id_proyecto));
+                    comm.Parameters.Add(new SqlParameter("@funcionalidad", valor.Funcionalidad));
+                    comm.Parameters.Add(new SqlParameter("@documentacion", valor.Documentacion));
+                    comm.Parameters.Add(new SqlParameter("@diseño", valor.Diseño));
+                    comm.Parameters.Add(new SqlParameter("@retroalimentacion", valor.Retroalimentacion));
+                    comm.Parameters.Add(new SqlParameter("@tiempo_de_entrega", valor.Tiempo_de_entrega));
+                    comm.Parameters.Add(new SqlParameter("@legajo_valora", valor.Legajo_valora));
+
+                    comm.ExecuteNonQuery();
+
+                    return mensaje;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

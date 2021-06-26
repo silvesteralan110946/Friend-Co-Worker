@@ -134,7 +134,38 @@ export class ProyectoComponent implements OnInit {
       this.valoresServices.onCreateValorarProyecto(selectedVotacion).subscribe(
         data => {
           if (data == 1) {
-            Swal.fire('Error', 'Ya valoraste este proyecto', 'error');
+
+            Swal.fire({
+              title: '¿Ya votaste a este proyecto, quieres modificar tu valoración?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Si, votar',
+              cancelButtonText: 'No'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                //Nos suscribimos al servicio y traemos el metodo del backend
+                let selectedVotacion: ValoresProyectoInterface = new ValoresProyectoInterface(this.idproyecto, this.funcionalidad, this.documentacion,
+                  this.diseño, this.retro, this.tiempo, this.idEmpleado);
+                this.valoresServices.ModificarValorarProyecto(selectedVotacion).subscribe();
+                Swal.fire(
+                  'LISTO!',
+                  'La votación se modifico.',
+                  'success'
+                )
+                this.refresh();
+                // For more information about handling dismissals please visit
+                // https://sweetalert2.github.io/#handling-dismissals
+              } else if (result.dismiss === Swal.DismissReason.cancel) {
+                Swal.fire(
+                  'Cancelado',
+                  'La operación se cancelo con exito :)',
+                  'error'
+                )
+                this.refresh();
+              }
+            })
+
+            //Swal.fire('Error', 'Ya valoraste este proyecto', 'error');
             this.refresh();
           } else {
             Swal.fire('Enviado', 'Valor sumado con exito', 'success');
