@@ -102,9 +102,19 @@ export class CalificacionesEmpleadoComponent implements OnInit {
       ticks: {
         min: 0,
         max: 5
+      },
+      pointLabels: {
+        fontSize: 13,
+        fontStyle: "bold"
       }
-    }
-
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontSize: 25,
+        fontStyle: "bold"
+      }
+    },
   };
   public radarChartLabels: Label[] = ['Comunicación', 'Desempeño individual', 'Trabajo en equipo', 'Puntualidad', 'Resolución de problemas'];
 

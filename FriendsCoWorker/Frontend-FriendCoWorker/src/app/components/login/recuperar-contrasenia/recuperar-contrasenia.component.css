@@ -341,6 +341,10 @@ h1 {
   padding-top: 1rem;
 }
 
+#btnAceptar:hover {
+  background-color: #157cac;
+}
+
 #btnAceptar:disabled {
   background-color: #a19e9c;
 }
