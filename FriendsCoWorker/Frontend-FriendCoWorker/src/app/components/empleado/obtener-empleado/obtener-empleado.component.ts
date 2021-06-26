@@ -75,8 +75,38 @@ export class ObtenerEmpleadoComponent implements OnInit {
         this.valoresEmpleadoServices.onCreateValorarEmpleado(selectedVotacion).subscribe(
           data => {
             if (data == 1) {
-              Swal.fire('Error', 'Ya valoraste este empleado', 'error');
-              this.refresh();
+
+              Swal.fire({
+                title: '¿Ya votaste a este empleado, quieres modificar tu valoración?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Si, votar',
+                cancelButtonText: 'No'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  //Nos suscribimos al servicio y traemos el metodo del backend
+                  let selectedVotacion: ValoresEmpleadoInterface = new ValoresEmpleadoInterface(this.legajo, this.Comunicacion, this.desempenio_individual,
+                    this.trabajoEquipo, this.puntualidad, this.resolucion_de_problemas, this.idEmpleado);
+                  this.valoresEmpleadoServices.ModificarValorarEmpleado(selectedVotacion).subscribe();
+                  Swal.fire(
+                    'LISTO!',
+                    'La votación se modifico.',
+                    'success'
+                  )
+                  this.refresh();
+                  // For more information about handling dismissals please visit
+                  // https://sweetalert2.github.io/#handling-dismissals
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                  Swal.fire(
+                    'Cancelado',
+                    'La operación se cancelo con exito :)',
+                    'error'
+                  )
+                  this.refresh();
+                }
+              })
+              //Swal.fire('Error', 'Ya valoraste este empleado', 'error');
+              //this.refresh();
             } else {
               Swal.fire('Enviado', 'Valor sumado con exito', 'success');
               this.refresh();
@@ -93,6 +123,6 @@ export class ObtenerEmpleadoComponent implements OnInit {
   }
 
   refresh(): void {
-    window.setTimeout(function(){location.reload()},1500)
+    window.setTimeout(function () { location.reload() }, 1500)
   }
 }

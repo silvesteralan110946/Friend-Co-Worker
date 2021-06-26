@@ -36,8 +36,11 @@ namespace FriendsCoWorker.Controllers
         }
 
         // PUT: api/ValoresEmpleados/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public int Put([FromBody] ValoresEmpleado valor)
         {
+            GestorValorarEmpleado gValor = new GestorValorarEmpleado();
+            return gValor.modificarValorEmpleado(valor);
         }
 
         // DELETE: api/ValoresEmpleados/5

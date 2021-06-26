@@ -22,4 +22,9 @@ export class ValorarProyectoService {
   onCreateValorarProyecto(proyecto: ValoresProyectoInterface): Observable<any> {
     return this.http.post(url, proyecto, httpOptions);
   }
+
+  // Modificar votacion
+  ModificarValorarProyecto(proyecto: ValoresProyectoInterface): Observable<any> {
+    return this.http.put(url, proyecto, httpOptions);
+  }
 }

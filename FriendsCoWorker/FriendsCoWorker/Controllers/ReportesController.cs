@@ -1,4 +1,5 @@
 ﻿using FriendsCoWorker.AccesoDatos;
+using FriendsCoWorker.Models;
 using FriendsCoWorker.ModelsReports;
 using System;
 using System.Collections.Generic;

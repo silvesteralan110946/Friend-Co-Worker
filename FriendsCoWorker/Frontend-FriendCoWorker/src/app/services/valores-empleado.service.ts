@@ -22,4 +22,9 @@ export class ValoresEmpleadoService {
   onCreateValorarEmpleado(proyecto: ValoresEmpleadoInterface): Observable<any> {
     return this.http.post(url, proyecto, httpOptions);
   }
+
+  // Modificar votacion
+  ModificarValorarEmpleado(proyecto: ValoresEmpleadoInterface): Observable<any> {
+    return this.http.put(url, proyecto, httpOptions);
+  }
 }
