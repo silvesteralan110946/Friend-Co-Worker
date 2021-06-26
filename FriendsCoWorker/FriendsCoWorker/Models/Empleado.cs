@@ -17,7 +17,7 @@ namespace FriendsCoWorker.Models
         private string fechaNacimiento;
         private int idLocalidad;
         private string domicilio;
-        private int telefono;
+        private long telefono;
         private string email;
         private int idTipoEmpleado;
         private string nombreUsuario;
@@ -51,7 +51,7 @@ namespace FriendsCoWorker.Models
             this.tokenRecovery = tokenRecovery;
         }
         public Empleado(int legajo, string nombre, string apellido, string sexo, int idTipoDocumento, string numeroDocumento, string fotoPerfil, string fechaNacimiento,
-            int idLocalidad, string domicilio, int telefono, string email, int idTipoEmpleado, string nombreUsuario, string password)
+            int idLocalidad, string domicilio, long telefono, string email, int idTipoEmpleado, string nombreUsuario, string password)
         {
             this.legajo = legajo;
             this.nombre = nombre;
@@ -80,7 +80,7 @@ namespace FriendsCoWorker.Models
         public string FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public int IdLocalidad { get => idLocalidad; set => idLocalidad = value; }
         public string Domicilio { get => domicilio; set => domicilio = value; }
-        public int Telefono { get => telefono; set => telefono = value; }
+        public long Telefono { get => telefono; set => telefono = value; }
         public string Email { get => email; set => email = value; }
         public int IdTipoEmpleado { get => idTipoEmpleado; set => idTipoEmpleado = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }

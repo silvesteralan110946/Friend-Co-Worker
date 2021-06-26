@@ -3,7 +3,7 @@
     <div class="cardTamaño">
       <div class="card">
         <div class="card-body text-center">
-          <span class="titulo">Bienvenido</span>
+          <span class="titulo"><strong>Bienvenido</strong></span>
           <br>
           <span class="titulo">Complete los campos para crear su cuenta</span>
           <form class="mt-3" [formGroup]="formEmpleado" (ngSubmit)="agregarEmpleado(selectedEmpleado)">
@@ -12,7 +12,7 @@
               <div class="card">
                 <div class="card-body text-center">
                   <div class=" col-12 col-sm-12 col-md-12 dni-mensaje">
-                    <p>Ingrese una foto de perfil</p>
+                    <p>Ingrese su foto de perfil</p>
                 </div>
                 <div class=" col-12 col-sm-12 col-md-12 selfie">
                     <div class="row">
@@ -45,7 +45,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('nombre')?.touched || formEmpleado.get('nombre')?.dirty) && !formEmpleado.get('nombre')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('nombre').errors?.required">
-                      Introduzca un Nombre
+                      Introduzca su Nombre
                     </span>
                     <span *ngIf="formEmpleado.get('nombre').errors?.pattern">
                       Debe contener al menos 2 caracteres
@@ -62,7 +62,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('apellido')?.touched || formEmpleado.get('apellido')?.dirty) && !formEmpleado.get('apellido')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('apellido').errors?.required">
-                      Introduzca un Apellido
+                      Introduzca su Apellido
                     </span>
                     <span *ngIf="formEmpleado.get('apellido').errors?.pattern">
                       Debe contener al menos 2 caracteres
@@ -77,10 +77,11 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('sexo')?.touched || formEmpleado.get('sexo')?.dirty) && !formEmpleado.get('sexo')?.valid}">
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
                   </select>
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('sexo').errors?.required">
-                      Seleccione el sexo
+                      Seleccione su sexo
                     </span>
                   </div>
                 </div>
@@ -95,7 +96,7 @@
                   </select>
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('idTipoDocumento').errors?.required">
-                      Seleccione un tipo de dni
+                      Seleccione su tipo de dni
                     </span>
                   </div>
                 </div>
@@ -108,7 +109,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('numDni')?.touched || formEmpleado.get('numDni')?.dirty) && !formEmpleado.get('numDni')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('numDni').errors?.required">
-                      Introduzca un DNI
+                      Introduzca su DNI
                     </span>
                     <span *ngIf="formEmpleado.get('numDni').errors?.pattern">
                       Debe contener al menos 7 caracteres Numéricos, sín espacios en blanco
@@ -124,7 +125,7 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('telefono')?.touched || formEmpleado.get('telefono')?.dirty) && !formEmpleado.get('telefono')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('telefono').errors?.required">
-                      Introduzca un Teléfono
+                      Introduzca su Teléfono
                     </span>
                     <span *ngIf="formEmpleado.get('telefono').errors?.pattern">
                       Ingrese los 10 digitos numéricos sin el prefijo
@@ -139,7 +140,7 @@
                     [ngClass]="{ 'is-invalid': formEmpleado.get('fechaNacimiento')?.touched && !formEmpleado.get('fechaNacimiento')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('fechaNacimiento').errors?.required">
-                      Introduzca una Fecha de Nacimiento
+                      Introduzca su Fecha de Nacimiento
                     </span>
                   </div>
                 </div>
@@ -151,10 +152,10 @@
                     [ngClass]="{ 'is-invalid': (formEmpleado.get('email')?.touched || formEmpleado.get('email')?.dirty) && !formEmpleado.get('email')?.valid}">
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('email').errors?.required">
-                      Introduzca un Email
+                      Introduzca su Email
                     </span>
                     <span *ngIf="formEmpleado.get('email').errors?.pattern">
-                      Ingresa un formato correcto, ejemplo@ejemplo.com
+                      Ingrese un formato correcto, ejemplo@ejemplo.com
                     </span>
                   </div>
                 </div>
@@ -174,7 +175,7 @@
                   </select>
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('pais').errors?.required">
-                      Seleccione un país
+                      Seleccione su país
                     </span>
                   </div>
                 </div>
@@ -190,7 +191,7 @@
                   </select>
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('provincia').errors?.required">
-                      Seleccione una provincia
+                      Seleccione su provincia
                     </span>
                   </div>
                 </div>
@@ -205,7 +206,7 @@
                   </select>
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('localidad').errors?.required">
-                      Seleccione una localidad
+                      Seleccione su localidad
                     </span>
                   </div>
                 </div>
@@ -219,7 +220,7 @@
 
                   <div class="invalid-feedback">
                     <span *ngIf="formEmpleado.get('domicilio').errors?.required">
-                      Introduzca un Domicilio
+                      Introduzca su Domicilio
                     </span>
                     <span *ngIf="formEmpleado.get('domicilio').errors?.pattern">
                       Ingresa solo caracters alfanumericos, longitud maxima 50

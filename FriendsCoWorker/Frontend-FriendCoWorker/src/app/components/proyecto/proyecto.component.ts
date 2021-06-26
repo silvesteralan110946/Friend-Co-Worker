@@ -130,7 +130,7 @@ export class ProyectoComponent implements OnInit {
     let selectedVotacion: ValoresProyectoInterface = new ValoresProyectoInterface(this.idproyecto, this.funcionalidad, this.documentacion,
       this.diseño, this.retro, this.tiempo, this.idEmpleado);
 
-    if (this.funcionalidad != null || this.documentacion != null || this.diseño != null || this.retro != null || this.tiempo != null) {
+    if (this.funcionalidad != undefined && this.documentacion != undefined && this.diseño != undefined && this.retro != undefined && this.tiempo != undefined) {
       this.valoresServices.onCreateValorarProyecto(selectedVotacion).subscribe(
         data => {
           if (data == 1) {
@@ -189,6 +189,6 @@ export class ProyectoComponent implements OnInit {
   }
 
   refresh(): void {
-    window.setTimeout(function(){location.reload()},2000)
+    window.setTimeout(function(){location.reload()},1500)
   }
 }
